@@ -5,10 +5,25 @@
 **Slide-local assets** live under `slides/<id>/assets/` — anything one-off to a single slide. Import them as ES modules:
 
 ```tsx
+import { ZoomableImage } from '@open-slide/core';
 import hero from './assets/hero.jpg';
-// …
-<img src={hero} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+
+// Standard rule: 100% full visibility, never cut off text or graphics, click to zoom full-screen:
+<ZoomableImage
+  src={hero}
+  alt="Description"
+  style={{
+    maxWidth: '100%',
+    maxHeight: '100%',
+    width: 'auto',
+    height: 'auto',
+    objectFit: 'contain',
+    borderRadius: 12,
+  }}
+/>
 ```
+
+> **Strict Standard:** All original images must be 100% completely visible on the slide without clipping any text, labels, or content. Always use `objectFit: 'contain'` and `<ZoomableImage>` from `@open-slide/core` so that clicking any image expands it to full screen, and clicking again restores it to original size. Never use `objectFit: 'cover'`, and never apply cramped `maxHeight` limits on portrait or detail-rich diagrams.
 
 For URL-only access:
 

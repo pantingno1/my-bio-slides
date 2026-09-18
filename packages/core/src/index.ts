@@ -2,6 +2,8 @@ export type { ImagePlaceholderProps } from './app/components/image-placeholder.t
 export { ImagePlaceholder } from './app/components/image-placeholder.tsx';
 export type { MorphElementProps } from './app/components/morph-element.tsx';
 export { MorphElement } from './app/components/morph-element.tsx';
+export type { ZoomableImageProps } from './app/components/zoomable-image.tsx';
+export { ZoomableImage } from './app/components/zoomable-image.tsx';
 export type {
   DesignFonts,
   DesignPalette,
