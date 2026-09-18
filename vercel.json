@@ -1,4 +1,7 @@
 {
+  "buildCommand": "pnpm --filter @open-slide/core build && pnpm --filter demo build",
+  "outputDirectory": "apps/demo/dist",
+  "installCommand": "pnpm install",
   "rewrites": [
     {
       "source": "/(.*)",
