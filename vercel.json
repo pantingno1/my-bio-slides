@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm --filter @open-slide/core build && pnpm --filter demo build",
-  "outputDirectory": "apps/demo/dist",
+  "buildCommand": "node scripts/build-vercel.js",
+  "outputDirectory": "dist",
   "installCommand": "pnpm install",
   "rewrites": [
     {
