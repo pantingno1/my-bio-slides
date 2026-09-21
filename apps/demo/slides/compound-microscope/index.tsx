@@ -314,24 +314,34 @@ const Scale: Page = () => (
       subtitle="肉眼、光學顯微鏡與電子顯微鏡的能力界限"
     />
 
-    <div style={{ display: 'grid', gridTemplateColumns: '740px 1fr', gap: 40, flex: 1 }}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '740px 1fr',
+        gap: 36,
+        flex: 1,
+        minHeight: 0,
+        maxHeight: 740,
+        alignItems: 'stretch',
+      }}
+    >
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14, minHeight: 0 }}>
         <div
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '24px 28px',
+            padding: '18px 24px',
             border: `1px solid ${palette.border}`,
-            borderLeft: `6px solid ${palette.teal}`,
+            borderLeft: `5px solid ${palette.teal}`,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-            <span style={{ fontSize: 32 }}>🔬</span>
-            <span style={{ fontSize: 30, fontWeight: 700, color: palette.text }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+            <span style={{ fontSize: 26 }}>🔬</span>
+            <span style={{ fontSize: 24, fontWeight: 800, color: palette.text }}>
               複式光學顯微鏡的範圍
             </span>
           </div>
-          <div style={{ fontSize: '30px', color: palette.muted, lineHeight: 1.6 }}>
+          <div style={{ fontSize: 21, color: palette.muted, lineHeight: 1.6 }}>
             可解析範圍約在{' '}
             <strong style={{ color: palette.teal }}>0.2 微米（μm）至 1 毫米（mm）</strong>{' '}
             之間，放大倍率約為 40 倍至 1000
@@ -343,18 +353,18 @@ const Scale: Page = () => (
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '24px 28px',
+            padding: '18px 24px',
             border: `1px solid ${palette.border}`,
-            borderLeft: `6px solid ${palette.blue}`,
+            borderLeft: `5px solid ${palette.blue}`,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-            <span style={{ fontSize: 32 }}>💡</span>
-            <span style={{ fontSize: 30, fontWeight: 700, color: palette.text }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+            <span style={{ fontSize: 26 }}>💡</span>
+            <span style={{ fontSize: 24, fontWeight: 800, color: palette.text }}>
               標本製作關鍵：薄而透光
             </span>
           </div>
-          <div style={{ fontSize: '30px', color: palette.muted, lineHeight: 1.6 }}>
+          <div style={{ fontSize: 21, color: palette.muted, lineHeight: 1.6 }}>
             複式顯微鏡採<strong>穿透式光路</strong>
             ，光線必須能直接穿透標本進入物鏡。因此觀察物體必須切成薄片或取單層細胞（如洋蔥表皮），過厚不透光的物體在視野中只會呈現一片漆黑。
           </div>
@@ -364,21 +374,22 @@ const Scale: Page = () => (
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '24px 28px',
+            padding: '18px 24px',
             border: `1px solid ${palette.border}`,
-            borderLeft: `6px solid ${palette.indigo}`,
+            borderLeft: `5px solid ${palette.indigo}`,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-            <span style={{ fontSize: 32 }}>📏</span>
-            <span style={{ fontSize: 30, fontWeight: 700, color: palette.text }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+            <span style={{ fontSize: 26 }}>📏</span>
+            <span style={{ fontSize: 24, fontWeight: 800, color: palette.text }}>
               尺度層級對比速記
             </span>
           </div>
-          <div style={{ fontSize: '32px', color: palette.muted, lineHeight: 1.6 }}>
+          <div style={{ fontSize: 21, color: palette.muted, lineHeight: 1.6 }}>
             • <strong>肉眼極限</strong>：約 0.1 mm（100 μm，如跳蚤、人體卵細胞）
             <br />• <strong>光學顯微鏡</strong>：細胞、大型胞器、細菌（病毒不可見！）
-            <br />• <strong>電子顯微鏡</strong>：0.2 nm ~ 100 nm（可看見病毒、蛋白質分子與DNA結構）
+            <br />• <strong>電子顯微鏡</strong>：0.2 nm ~ 100 nm（可看見病毒、蛋白質分子與 DNA
+            結構）
           </div>
         </div>
       </div>
@@ -387,21 +398,24 @@ const Scale: Page = () => (
         style={{
           background: palette.surface,
           borderRadius: 20,
-          padding: 16,
+          padding: 14,
           border: `1px solid ${palette.border}`,
           boxShadow: '0 8px 30px -4px rgba(15, 23, 42, 0.08)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
+          minHeight: 0,
         }}
       >
         <ZoomableImage
           src={scaleImg}
           alt="顯微鏡的觀察範圍"
           style={{
-            width: '100%',
-            height: '100%',
+            maxWidth: '100%',
+            maxHeight: '100%',
+            width: 'auto',
+            height: 'auto',
             objectFit: 'contain',
             borderRadius: 12,
           }}
@@ -409,7 +423,7 @@ const Scale: Page = () => (
       </div>
     </div>
 
-    <PageFooter tip="光學顯微鏡以可見光為光源，極限受限於光波波長（約0.2微米），無法看見病毒！" />
+    <PageFooter tip="光學顯微鏡以可見光為光源，極限受限於光波波長（約 0.2 微米），無法看見病毒！" />
   </div>
 );
 
@@ -424,33 +438,25 @@ const Structure: Page = () => (
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: '720px 1fr',
+        gridTemplateColumns: '740px 1fr',
         gap: 36,
         flex: 1,
         minHeight: 0,
-        maxHeight: 720,
+        maxHeight: 740,
         alignItems: 'stretch',
       }}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 14, minHeight: 0 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minHeight: 0 }}>
         <div
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '18px 22px',
+            padding: '16px 22px',
             border: `1px solid ${palette.border}`,
             borderLeft: `5px solid ${palette.teal}`,
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 10,
-              marginBottom: 8,
-              fontSize: '24px',
-            }}
-          >
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
             <span
               style={{
                 background: palette.tealLight,
@@ -458,39 +464,21 @@ const Structure: Page = () => (
                 padding: '3px 10px',
                 borderRadius: 6,
                 fontWeight: 800,
-                fontSize: 21,
+                fontSize: 20,
               }}
             >
-              系統<span style={{ fontSize: '27px' }}>一</span>
+              系統一
             </span>
-            <span style={{ fontSize: '27px', fontWeight: 700, color: palette.text }}>
+            <span style={{ fontSize: 24, fontWeight: 800, color: palette.text }}>
               光學放大系統（目鏡與物鏡）
             </span>
           </div>
-          <div style={{ fontSize: '36px', color: palette.muted, lineHeight: 1.55 }}>
-            <span style={{ fontSize: '25px' }}>
-              <span style={{ fontSize: '30px' }}>•</span>
-              <span style={{ fontSize: '30px' }}> </span>
-            </span>
-            <strong style={{ fontSize: '30px' }}>目鏡</strong>
-            <span style={{ fontSize: '30px' }}>：無螺紋直接插於鏡筒，</span>
-            <strong style={{ fontSize: '30px' }}>鏡身短者倍率大，鏡身長者倍率小</strong>
-            <span style={{ fontSize: '30px' }}>。</span>
-            <br />
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>物鏡</strong>
-            <span style={{ fontSize: '30px' }}>：螺紋旋於旋轉盤，</span>
-            <strong style={{ fontSize: '26px' }}>
-              <span style={{ fontWeight: '700', fontSize: '30px' }}>
-                鏡身長者倍率大（高倍），鏡身短者倍率小（低
-              </span>
-              <span style={{ fontSize: '30px', fontWeight: '700' }}>倍）</span>
-            </strong>
-            <span style={{ fontSize: '30px' }}>。</span>
-            <br />
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>旋轉盤</strong>
-            <span style={{ fontSize: '30px' }}>：轉動以切換不同倍率的物鏡。</span>
+          <div style={{ fontSize: 21, color: palette.muted, lineHeight: 1.55 }}>
+            • <strong>目鏡</strong>：無螺紋直接插於鏡筒，
+            <strong>鏡身短者倍率大，鏡身長者倍率小</strong>。
+            <br />• <strong>物鏡</strong>：螺紋旋於旋轉盤，
+            <strong>鏡身長者倍率大（高倍），鏡身短者倍率小（低倍）</strong>。
+            <br />• <strong>旋轉盤</strong>：轉動以切換不同倍率的物鏡。
           </div>
         </div>
 
@@ -498,12 +486,12 @@ const Structure: Page = () => (
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '18px 22px',
+            padding: '16px 22px',
             border: `1px solid ${palette.border}`,
             borderLeft: `5px solid ${palette.blue}`,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
             <span
               style={{
                 background: palette.blueLight,
@@ -511,31 +499,21 @@ const Structure: Page = () => (
                 padding: '3px 10px',
                 borderRadius: 6,
                 fontWeight: 800,
-                fontSize: 21,
+                fontSize: 20,
               }}
             >
               系統二
             </span>
-            <span style={{ fontSize: 26, fontWeight: 700, color: palette.text }}>
+            <span style={{ fontSize: 24, fontWeight: 800, color: palette.text }}>
               調焦與載物系統（調焦輪與載物臺）
             </span>
           </div>
-          <div style={{ fontSize: '34px', color: palette.muted, lineHeight: 1.55 }}>
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>載物臺與玻片夾</strong>
-            <span style={{ fontSize: '30px' }}>：放置固定載玻片，中央圓孔供光線穿透。</span>
-            <br />
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>粗調節輪</strong>
-            <span style={{ fontSize: '30px' }}>：使載物臺大幅度上下移動，</span>
-            <strong style={{ fontSize: '30px' }}>僅限低倍鏡尋找初焦</strong>
-            <span style={{ fontSize: '30px' }}>。</span>
-            <br />
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>細調節輪</strong>
-            <span style={{ fontSize: '30px' }}>：使載物臺微幅移動，</span>
-            <strong style={{ fontSize: '30px' }}>高倍鏡下專用微調清晰度</strong>
-            <span style={{ fontSize: '30px' }}>。</span>
+          <div style={{ fontSize: 21, color: palette.muted, lineHeight: 1.55 }}>
+            • <strong>載物臺與玻片夾</strong>：放置固定載玻片，中央圓孔供光線穿透。
+            <br />• <strong>粗調節輪</strong>：使載物臺大幅度上下移動，
+            <strong>僅限低倍鏡尋找初焦</strong>。
+            <br />• <strong>細調節輪</strong>：使載物臺微幅移動，
+            <strong>高倍鏡下專用微調清晰度</strong>。
           </div>
         </div>
 
@@ -543,12 +521,12 @@ const Structure: Page = () => (
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '18px 22px',
+            padding: '16px 22px',
             border: `1px solid ${palette.border}`,
             borderLeft: `5px solid ${palette.amber}`,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
             <span
               style={{
                 background: palette.amberLight,
@@ -556,25 +534,19 @@ const Structure: Page = () => (
                 padding: '3px 10px',
                 borderRadius: 6,
                 fontWeight: 800,
-                fontSize: 21,
+                fontSize: 20,
               }}
             >
               系統三
             </span>
-            <span style={{ fontSize: 26, fontWeight: 700, color: palette.text }}>
+            <span style={{ fontSize: 24, fontWeight: 800, color: palette.text }}>
               聚光照明系統（光源與光圈）
             </span>
           </div>
-          <div style={{ fontSize: '34px', color: palette.muted, lineHeight: 1.55 }}>
-            <span style={{ fontSize: '34px' }}>{'• '}</span>
-            <strong style={{ fontSize: '34px' }}>光圈（遮光器）</strong>
-            <span style={{ fontSize: '34px' }}>：盤狀圓孔，調節通過玻片標本的進光量大小。</span>
-            <br />
-            <span style={{ fontSize: '34px' }}>{'• '}</span>
-            <strong style={{ fontSize: '34px' }}>反光鏡 / 光源</strong>
-            <span style={{ fontSize: '34px' }}>：電燈光源；反光鏡中</span>
-            <strong style={{ fontSize: '34px' }}>平面鏡適用強光，凹面鏡具聚光功能適用弱光</strong>
-            <span style={{ fontSize: '34px' }}>。</span>
+          <div style={{ fontSize: 21, color: palette.muted, lineHeight: 1.55 }}>
+            • <strong>光圈（遮光器）</strong>：盤狀圓孔，調節通過玻片標本的進光量大小。
+            <br />• <strong>反光鏡 / 光源</strong>：電燈光源；反光鏡中
+            <strong>平面鏡適用強光，凹面鏡具聚光功能適用弱光</strong>。
           </div>
         </div>
 
@@ -590,8 +562,8 @@ const Structure: Page = () => (
             marginTop: 'auto',
           }}
         >
-          <span style={{ fontSize: 28 }}>💡</span>
-          <div style={{ fontSize: 21, color: palette.teal, fontWeight: 600, lineHeight: 1.45 }}>
+          <span style={{ fontSize: 26 }}>💡</span>
+          <div style={{ fontSize: 20, color: palette.teal, fontWeight: 700, lineHeight: 1.45 }}>
             <strong>速記口訣：</strong>
             「目短物長倍率大，目長物短倍率小」；高倍觀察時絕不可轉動粗調節輪！
           </div>
@@ -602,7 +574,7 @@ const Structure: Page = () => (
         style={{
           background: palette.surface,
           borderRadius: 20,
-          padding: 12,
+          padding: 14,
           border: `1px solid ${palette.border}`,
           boxShadow: '0 8px 30px -4px rgba(15, 23, 42, 0.08)',
           display: 'flex',
@@ -610,10 +582,6 @@ const Structure: Page = () => (
           justifyContent: 'center',
           overflow: 'hidden',
           minHeight: 0,
-          height: '100%',
-          maxHeight: 720,
-          lineHeight: '1.25',
-          fontSize: '20px',
         }}
       >
         <ZoomableImage
@@ -626,7 +594,6 @@ const Structure: Page = () => (
             height: 'auto',
             objectFit: 'contain',
             borderRadius: 12,
-            objectPosition: '50% 50%',
           }}
         />
       </div>
@@ -1587,39 +1554,32 @@ const Compare: Page = () => (
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: '1fr 500px',
+        gridTemplateColumns: '1fr 520px',
         gap: 36,
         flex: 1,
         minHeight: 0,
-        maxHeight: 720,
+        maxHeight: 740,
         alignItems: 'stretch',
       }}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 14, minHeight: 0 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minHeight: 0 }}>
         <div
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '18px 24px',
+            padding: '16px 22px',
             border: `1px solid ${palette.border}`,
             borderLeft: `5px solid ${palette.teal}`,
           }}
         >
-          <div style={{ fontSize: 26, fontWeight: 800, color: palette.text, marginBottom: 8 }}>
-            <span style={{ fontSize: '34px' }}>1. 標本特性與光路形式</span>
+          <div style={{ fontSize: 24, fontWeight: 800, color: palette.text, marginBottom: 6 }}>
+            1. 標本特性與光路形式
           </div>
-          <div style={{ fontSize: 23, color: palette.muted, lineHeight: 1.55 }}>
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>複式顯微鏡</strong>
-            <span style={{ fontSize: '30px' }}>：穿透式光路為主，標本必須</span>
-            <strong style={{ fontSize: '30px' }}>薄而能透光</strong>
-            <span style={{ fontSize: '30px' }}>（需切片或染色製作玻片標本）。</span>
-            <br />
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>解剖顯微鏡</strong>
-            <span style={{ fontSize: '30px' }}>：反射式光路為主（亦具透射），可直接觀察</span>
-            <strong style={{ fontSize: '30px' }}>實體不透光標本</strong>
-            <span style={{ fontSize: '30px' }}>（如昆蟲觸角、花藥、礦石結晶）。</span>
+          <div style={{ fontSize: 21, color: palette.muted, lineHeight: 1.55 }}>
+            • <strong>複式顯微鏡</strong>：穿透式光路為主，標本必須<strong>薄而能透光</strong>
+            （需切片或染色製作玻片標本）。
+            <br />• <strong>解剖顯微鏡</strong>：反射式光路為主（亦具透射），可直接觀察
+            <strong>實體不透光標本</strong>（如昆蟲觸角、花藥、礦石結晶）。
           </div>
         </div>
 
@@ -1627,30 +1587,19 @@ const Compare: Page = () => (
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '18px 24px',
+            padding: '16px 22px',
             border: `1px solid ${palette.border}`,
             borderLeft: `5px solid ${palette.blue}`,
           }}
         >
-          <div style={{ fontSize: 26, fontWeight: 800, color: palette.text, marginBottom: 8 }}>
-            <span style={{ fontSize: '34px' }}>2. 成像特性與操作協調</span>
+          <div style={{ fontSize: 24, fontWeight: 800, color: palette.text, marginBottom: 6 }}>
+            2. 成像特性與操作協調
           </div>
-          <div style={{ fontSize: 23, color: palette.muted, lineHeight: 1.55 }}>
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>複式顯微鏡</strong>
-            <span style={{ fontSize: '30px' }}>：</span>
-            <strong style={{ fontSize: '30px' }}>倒立平面虛像</strong>
-            <span style={{ fontSize: '30px' }}>
-              （上下顛倒、左右相反），手移動玻片之方向與視野中像移動方向相反。
-            </span>
-            <br />
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>解剖顯微鏡</strong>
-            <span style={{ fontSize: '30px' }}>：</span>
-            <strong style={{ fontSize: '30px' }}>正立立體實像</strong>
-            <span style={{ fontSize: '30px' }}>
-              （具雙眼立體感），手操作解剖方向與視野中像完全一致，便於鑷子精細解剖。
-            </span>
+          <div style={{ fontSize: 21, color: palette.muted, lineHeight: 1.55 }}>
+            • <strong>複式顯微鏡</strong>：<strong>倒立平面虛像</strong>
+            （上下顛倒、左右相反），手移動玻片之方向與視野中像移動方向相反。
+            <br />• <strong>解剖顯微鏡</strong>：<strong>正立立體實像</strong>
+            （具雙眼立體感），手操作解剖方向與視野中像完全一致，便於鑷子精細解剖。
           </div>
         </div>
 
@@ -1658,26 +1607,18 @@ const Compare: Page = () => (
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '18px 24px',
+            padding: '16px 22px',
             border: `1px solid ${palette.border}`,
             borderLeft: `5px solid ${palette.amber}`,
           }}
         >
-          <div style={{ fontSize: 26, fontWeight: 800, color: palette.text, marginBottom: 8 }}>
-            <span style={{ fontSize: '34px' }}>3. 倍率範圍與調焦機構</span>
+          <div style={{ fontSize: 24, fontWeight: 800, color: palette.text, marginBottom: 6 }}>
+            3. 倍率範圍與調焦機構
           </div>
-          <div style={{ fontSize: 23, color: palette.muted, lineHeight: 1.55 }}>
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>複式顯微鏡</strong>
-            <span style={{ fontSize: '30px' }}>
-              ：倍率較高（約 40X ~ 1000X），具粗、細兩組調節輪。
-            </span>
-            <br />
-            <span style={{ fontSize: '30px' }}>{'• '}</span>
-            <strong style={{ fontSize: '30px' }}>解剖顯微鏡</strong>
-            <span style={{ fontSize: '30px' }}>
-              ：倍率較低（通常約 10X ~ 40X），通常僅具一組粗調節輪，另配有眼距與眼焦微調器。
-            </span>
+          <div style={{ fontSize: 21, color: palette.muted, lineHeight: 1.55 }}>
+            • <strong>複式顯微鏡</strong>：倍率較高（約 40X ~ 1000X），具粗、細兩組調節輪。
+            <br />• <strong>解剖顯微鏡</strong>：倍率較低（通常約 10X ~
+            40X），通常僅具一組粗調節輪，另配有眼距與眼焦微調器。
           </div>
         </div>
 
@@ -1693,8 +1634,8 @@ const Compare: Page = () => (
             marginTop: 'auto',
           }}
         >
-          <span style={{ fontSize: 28 }}>🔬</span>
-          <div style={{ fontSize: '25px', color: palette.teal, fontWeight: 600, lineHeight: 1.45 }}>
+          <span style={{ fontSize: 26 }}>🔬</span>
+          <div style={{ fontSize: 20, color: palette.teal, fontWeight: 700, lineHeight: 1.45 }}>
             <strong>選擇準則：</strong>
             觀察微小細胞內部構造選「複式顯微鏡」；解剖小型動植物、觀察立體表面選「解剖顯微鏡」。
           </div>
@@ -1705,7 +1646,7 @@ const Compare: Page = () => (
         style={{
           background: palette.surface,
           borderRadius: 20,
-          padding: 12,
+          padding: 14,
           border: `1px solid ${palette.border}`,
           boxShadow: '0 8px 30px -4px rgba(15, 23, 42, 0.08)',
           display: 'flex',
@@ -1713,8 +1654,6 @@ const Compare: Page = () => (
           justifyContent: 'center',
           overflow: 'hidden',
           minHeight: 0,
-          height: '100%',
-          maxHeight: 720,
         }}
       >
         <ZoomableImage
