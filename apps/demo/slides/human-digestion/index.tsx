@@ -1321,7 +1321,7 @@ const LabSalivaTemperaturePage: Page = () => (
   <div style={fill}>
     <PageHeader
       title="探究實驗 3-2：溫度對唾液分解澱粉的影響"
-      subtitle="課本必考實驗——控制變因、操作變因與甲乙丙試管呈色對照"
+      subtitle="課本必考實驗——控制變因、操作變因與甲乙試管呈色對照"
     />
 
     <div
@@ -1335,23 +1335,23 @@ const LabSalivaTemperaturePage: Page = () => (
         alignItems: 'stretch',
       }}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minHeight: 0 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14, minHeight: 0 }}>
         <div
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '14px 18px',
+            padding: '16px 20px',
             border: `1px solid ${palette.border}`,
             borderLeft: `5px solid ${palette.rust}`,
           }}
         >
-          <div style={{ fontSize: 24, fontWeight: 800, color: palette.text, marginBottom: 4 }}>
+          <div style={{ fontSize: 24, fontWeight: 800, color: palette.text, marginBottom: 6 }}>
             實驗變因設計：
           </div>
-          <div style={{ fontSize: 20, color: palette.muted, lineHeight: 1.5 }}>
+          <div style={{ fontSize: 20, color: palette.muted, lineHeight: 1.6 }}>
             • <strong>操作變因：</strong>
-            <strong>溫度環境</strong>（甲：37℃ 溫水；乙：100℃ 沸水；丙：0℃ 冰水）。
-            <br />• <strong>控制變因：</strong>唾液濃度與量相同、澱粉液濃度與量相同、靜置時間相同。
+            <strong>溫度環境</strong>（甲管：100℃ 沸水；乙管：37℃ 溫水）。
+            <br />• <strong>控制變因：</strong>唾液量與濃度、澱粉液量與濃度、靜置反應時間相同。
             <br />• <strong>應變變因：</strong>
             澱粉剩餘量（碘液檢驗）與糖分生成量（本氏液隔水加熱檢驗）。
           </div>
@@ -1361,11 +1361,11 @@ const LabSalivaTemperaturePage: Page = () => (
           style={{
             background: palette.surface,
             borderRadius: 16,
-            padding: '14px 18px',
+            padding: '16px 20px',
             border: `1px solid ${palette.border}`,
           }}
         >
-          <div style={{ fontSize: 22, fontWeight: 800, color: palette.text, marginBottom: 6 }}>
+          <div style={{ fontSize: 22, fontWeight: 800, color: palette.text, marginBottom: 10 }}>
             實驗結果與酵素狀態分析表：
           </div>
           <table
@@ -1383,47 +1383,60 @@ const LabSalivaTemperaturePage: Page = () => (
                   borderBottom: `2px solid ${palette.border}`,
                 }}
               >
-                <th style={{ padding: '6px' }}>試管組別</th>
-                <th style={{ padding: '6px' }}>溫度</th>
-                <th style={{ padding: '6px' }}>碘液反應</th>
-                <th style={{ padding: '6px' }}>本氏液加熱</th>
-                <th style={{ padding: '6px' }}>酵素狀態</th>
+                <th style={{ padding: '10px 8px' }}>試管組別</th>
+                <th style={{ padding: '10px 8px' }}>溫度環境</th>
+                <th style={{ padding: '10px 8px' }}>碘液反應</th>
+                <th style={{ padding: '10px 8px' }}>本氏液隔水加熱</th>
+                <th style={{ padding: '10px 8px' }}>酵素活性狀態</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: `1px solid ${palette.border}` }}>
-                <td style={{ padding: '6px', fontWeight: 800, color: palette.emerald }}>甲管</td>
-                <td style={{ padding: '6px' }}>37℃</td>
-                <td style={{ padding: '6px' }}>黃褐色（澱粉已分解）</td>
-                <td style={{ padding: '6px', color: palette.rose, fontWeight: 800 }}>
-                  橙紅色（有糖）
+                <td style={{ padding: '12px 8px', fontWeight: 800, color: palette.rose }}>甲管</td>
+                <td style={{ padding: '12px 8px', fontWeight: 700 }}>100℃ 沸水</td>
+                <td style={{ padding: '12px 8px', color: palette.blue, fontWeight: 800 }}>
+                  藍黑色（澱粉未分解）
                 </td>
-                <td style={{ padding: '6px', color: palette.emerald, fontWeight: 800 }}>
-                  活性極高
-                </td>
-              </tr>
-              <tr style={{ borderBottom: `1px solid ${palette.border}` }}>
-                <td style={{ padding: '6px', fontWeight: 800, color: palette.rose }}>乙管</td>
-                <td style={{ padding: '6px' }}>100℃</td>
-                <td style={{ padding: '6px', color: palette.blue, fontWeight: 800 }}>
-                  藍黑色（澱粉仍在）
-                </td>
-                <td style={{ padding: '6px' }}>藍色（無糖）</td>
-                <td style={{ padding: '6px', color: palette.rose, fontWeight: 800 }}>
+                <td style={{ padding: '12px 8px', color: palette.blue }}>藍色（無糖）</td>
+                <td style={{ padding: '12px 8px', color: palette.rose, fontWeight: 800 }}>
                   永久變性失活
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '6px', fontWeight: 800, color: palette.blue }}>丙管</td>
-                <td style={{ padding: '6px' }}>0℃</td>
-                <td style={{ padding: '6px', color: palette.blue, fontWeight: 800 }}>
-                  藍黑色（澱粉未分解）
+                <td style={{ padding: '12px 8px', fontWeight: 800, color: palette.emerald }}>
+                  乙管
                 </td>
-                <td style={{ padding: '6px' }}>藍色（無糖）</td>
-                <td style={{ padding: '6px', color: palette.blue, fontWeight: 800 }}>暫時被抑制</td>
+                <td style={{ padding: '12px 8px', fontWeight: 700 }}>37℃ 溫水</td>
+                <td style={{ padding: '12px 8px', color: palette.emerald, fontWeight: 700 }}>
+                  黃褐色（澱粉已水解）
+                </td>
+                <td style={{ padding: '12px 8px', color: palette.rose, fontWeight: 800 }}>
+                  橙紅色（有糖）
+                </td>
+                <td style={{ padding: '12px 8px', color: palette.emerald, fontWeight: 800 }}>
+                  最適溫度，活性極高
+                </td>
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div
+          style={{
+            background: palette.rustLight,
+            borderRadius: 16,
+            padding: '14px 18px',
+            border: `1px solid ${palette.rustBorder}`,
+            fontSize: 20,
+            color: palette.text,
+            lineHeight: 1.5,
+          }}
+        >
+          <strong>📌 會考實驗核心結論：</strong>
+          <br />• <strong>甲管（100℃）：</strong>
+          高溫會破壞酵素蛋白質結構，使酵素永久變性失活，即使降溫亦無法復原。
+          <br />• <strong>乙管（37℃）：</strong>
+          接近人體口腔正常體溫，唾液澱粉酶活性最佳，澱粉完全被分解產生糖分。
         </div>
       </div>
 
@@ -1477,7 +1490,7 @@ const LabSalivaTemperaturePage: Page = () => (
       </div>
     </div>
 
-    <PageFooter tip="會考追問考點：丙管（0℃）若移回 37℃ 溫水中，酵素活性會恢復並能成功分解澱粉！" />
+    <PageFooter tip="會考關鍵考點：甲管經 100℃ 沸水處理後酵素已永久變性破壞，即使移回 37℃ 也無法再恢復分解功能！" />
   </div>
 );
 
@@ -1884,7 +1897,7 @@ export const notes: (string | undefined)[] = [
   '小腸三重消化液：比較膽汁（肝造膽存、無酵素、純乳化）、胰液（全能消化液，醣蛋脂皆分解）與腸液。',
   '養分終產物：三種主要養分分解為葡萄糖、胺基酸、脂肪酸與甘油，強調只有單體小分子才能穿透膜被吸收。',
   '小腸絨毛吸收：解析皺襞、絨毛與微絨毛如何將表面積放大至網球場大；詳細說明微血管與乳糜管的雙軌吸收途徑。',
-  '實驗3-2唾液實驗：剖析甲管（37度反應完全）、乙管（100度永久變性失活）、丙管（0度暫時抑制）的實驗呈色。',
+  '實驗3-2唾液實驗：剖析甲管（100℃ 沸水，永久變性失活）與乙管（37℃ 溫水，最適溫度反應完全）之碘液與本氏液實驗對照。',
   '大腸與排遺：說明大腸回收水分與共生菌功能，重點澄清「排遺（排便）」與「排泄（排尿汗呼氣）」的嚴格生物學差異。',
   '會考陷阱剖析：逐一破解膽汁來源與成分、食物路徑、排便非排泄、小腸才是吸收主力四大常見迷思。',
   '總結頁：帶領全班齊聲朗誦四大黃金速記口訣，完成單元核心概念整合閉環。',
