@@ -2298,7 +2298,7 @@ const Summary: Page = () => (
 );
 
 export const meta: SlideMeta = {
-  title: '國中生物：細胞構造與生理功能',
+  title: '細胞構造與生理功能',
 };
 
 export const notes: (string | undefined)[] = [

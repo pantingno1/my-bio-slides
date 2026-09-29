@@ -1794,7 +1794,7 @@ export const notes: (string | undefined)[] = [
 ];
 
 export const meta: SlideMeta = {
-  title: '國中生物：複式顯微鏡構造與操作指引',
+  title: '複式顯微鏡構造與操作指引',
   createdAt: '2026-09-14T02:06:05.500Z',
 };
 
