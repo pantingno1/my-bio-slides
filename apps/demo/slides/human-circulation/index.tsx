@@ -1728,12 +1728,149 @@ const SlideLymphaticOrgans: Page = () => (
   </div>
 );
 
+const SlideWhiteBloodCells: Page = () => (
+  <div style={fill}>
+    <PageHeader
+      category="單元 4-3 · 血液循環系統"
+      title="白血球的變形蟲運動與吞噬作用"
+      subtitle="穿透微血管壁抵達感染部位，人體內部的守護衛士"
+    />
+
+    <div
+      style={{
+        flex: 1,
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: 28,
+        alignItems: 'stretch',
+        minHeight: 0,
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 14,
+          overflowY: 'auto',
+          justifyContent: 'center',
+        }}
+      >
+        <div
+          style={{
+            background: palette.surface,
+            borderRadius: 16,
+            padding: '16px 20px',
+            border: `1px solid ${palette.border}`,
+            borderLeft: `6px solid ${palette.purple}`,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 24,
+              fontWeight: 700,
+              color: palette.purple,
+              marginBottom: 6,
+            }}
+          >
+            🦠 變形蟲運動 (Amoeboid Movement)
+          </div>
+          <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.45 }}>
+            • <strong>運動型態：</strong>伸出偽足改變細胞外形，可自主在血管與組織中移動。
+            <br />• <strong>穿越血管壁：</strong>直接<strong>穿透微血管壁的內皮細胞間隙</strong>
+            ，進入受感染的組織間隙。
+          </div>
+        </div>
+
+        <div
+          style={{
+            background: palette.surface,
+            borderRadius: 16,
+            padding: '16px 20px',
+            border: `1px solid ${palette.border}`,
+            borderLeft: `6px solid ${palette.crimson}`,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 24,
+              fontWeight: 700,
+              color: palette.crimson,
+              marginBottom: 6,
+            }}
+          >
+            🛡️ 吞噬作用與膿液形成
+          </div>
+          <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.45 }}>
+            • <strong>吞噬清除：</strong>包圍、吞入並分解病原菌及受損細胞碎片。
+            <br />• <strong>膿液 (Pus)：</strong>
+            大量白血球與細菌激烈交戰後，殉職的白血球遺體與壞死組織混合而成。
+          </div>
+        </div>
+
+        <div
+          style={{
+            background: palette.crimsonLight,
+            borderRadius: 16,
+            padding: '14px 18px',
+            border: `1px solid ${palette.crimsonBorder}`,
+            fontSize: 20,
+            color: palette.text,
+            lineHeight: 1.45,
+          }}
+        >
+          <strong>🔥 發炎反應 (Inflammation)：</strong>
+          感染部位微血管擴張、通透性大幅增加，使更多白血球與抗體滲出，局部呈現
+          <strong>「紅、腫、熱、痛」</strong>現象。
+        </div>
+      </div>
+
+      <div
+        style={{
+          background: palette.surface,
+          borderRadius: 18,
+          border: `1px solid ${palette.border}`,
+          padding: 14,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+        }}
+      >
+        <ZoomableImage
+          src={whiteBloodCellsCapillaryImg}
+          alt="白血球穿透微血管壁進行吞噬"
+          style={{
+            maxWidth: '100%',
+            maxHeight: '100%',
+            width: 'auto',
+            height: 'auto',
+            objectFit: 'contain',
+          }}
+        />
+        <div
+          style={{
+            fontSize: 20,
+            color: palette.muted,
+            marginTop: 8,
+            textAlign: 'center',
+          }}
+        >
+          ▲ 圖 4-3 白血球穿過微血管壁進行吞噬作用（點擊可全螢幕放大檢視）
+        </div>
+      </div>
+    </div>
+
+    <PageFooter note="白血球可藉變形蟲運動穿透微血管壁，前往組織清除病原菌。" />
+  </div>
+);
+
 const SlideImmuneDefense: Page = () => (
   <div style={fill}>
     <PageHeader
       category="單元 4-4 · 人體的防禦作用"
-      title="白血球穿透與人體三道防線"
-      subtitle="物理屏障、非專一性吞噬發炎與專一性免疫抗體反應"
+      title="人體防禦機制：三道防線全景"
+      subtitle="皮膜物理屏障、非專一性發炎與專一性淋巴球抗體防護"
     />
 
     <div
@@ -1772,11 +1909,12 @@ const SlideImmuneDefense: Page = () => (
               marginBottom: 4,
             }}
           >
-            🛡️ 第一道防線（皮膜物理與化學屏障）
+            🛡️ 第一道防線（皮膜物理與化學屏障 · 非專一性）
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.4 }}>
-            • <strong>皮膚角質層：</strong>阻擋微生物入侵體內。
-            <br />• <strong>黏膜與纖毛：</strong>呼吸道分泌黏液捕捉塵埃，胃酸強酸殺死食物病菌。
+            • <strong>外層防禦：</strong>皮膚角質層阻擋外界病菌。
+            <br />• <strong>黏膜分泌：</strong>
+            呼吸道黏液與纖毛掃除異物；胃液強酸（pH≈2）殺死食物中的微生物。
           </div>
         </div>
 
@@ -1797,12 +1935,11 @@ const SlideImmuneDefense: Page = () => (
               marginBottom: 4,
             }}
           >
-            ⚔️ 第二道防線（非專一性吞噬與發炎）
+            ⚔️ 第二道防線（內部非專一性吞噬與發炎）
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.4 }}>
-            • <strong>變形蟲運動：</strong>白血球伸出偽足，<strong>穿透微血管壁</strong>
-            抵達感染組織。
-            <br />• <strong>發炎反應：</strong>組織充血紅腫熱痛，白血球大量吞噬病菌，形成膿液。
+            • <strong>吞噬防禦：</strong>白血球吞噬任何入侵異物，不分對象。
+            <br />• <strong>生理機制：</strong>發炎反應加速免疫物資輸送；發燒提升體溫抑制病菌繁殖。
           </div>
         </div>
 
@@ -1823,13 +1960,12 @@ const SlideImmuneDefense: Page = () => (
               marginBottom: 4,
             }}
           >
-            🎯 第三道防線（專一性免疫反應）
+            🎯 第三道防線（專一性免疫反應 · 淋巴球）
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.4 }}>
-            • <strong>淋巴球作用：</strong>B 淋巴球製造<strong>特異性抗體</strong>對抗特定抗原；T
-            淋巴球毒殺病變細胞。
-            <br />• <strong>免疫記憶：</strong>具專一性與記憶性，是<strong>疫苗預防接種</strong>
-            的科學原理。
+            • <strong>B 淋巴球：</strong>產生<strong>特異性抗體</strong>專門中和特定病原抗原。
+            <br />• <strong>T 淋巴球：</strong>毒殺被感染細胞；具有<strong>免疫記憶</strong>
+            （疫苗預防接種原理）。
           </div>
         </div>
       </div>
@@ -1842,67 +1978,36 @@ const SlideImmuneDefense: Page = () => (
           padding: 14,
           display: 'flex',
           flexDirection: 'column',
-          gap: 12,
+          alignItems: 'center',
           justifyContent: 'center',
           overflow: 'hidden',
         }}
       >
-        <div
+        <ZoomableImage
+          src={immuneDefenseMechanismsImg}
+          alt="人體防禦作用全景機制"
           style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: 0,
+            maxWidth: '100%',
+            maxHeight: '100%',
+            width: 'auto',
+            height: 'auto',
+            objectFit: 'contain',
           }}
-        >
-          <ZoomableImage
-            src={whiteBloodCellsCapillaryImg}
-            alt="白血球穿透微血管壁進行吞噬"
-            style={{
-              maxWidth: '100%',
-              maxHeight: '100%',
-              width: 'auto',
-              height: 'auto',
-              objectFit: 'contain',
-            }}
-          />
-        </div>
-        <div
-          style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: 0,
-          }}
-        >
-          <ZoomableImage
-            src={immuneDefenseMechanismsImg}
-            alt="人體防禦作用全景機制"
-            style={{
-              maxWidth: '100%',
-              maxHeight: '100%',
-              width: 'auto',
-              height: 'auto',
-              objectFit: 'contain',
-            }}
-          />
-        </div>
+        />
         <div
           style={{
             fontSize: 20,
             color: palette.muted,
+            marginTop: 8,
             textAlign: 'center',
-            flexShrink: 0,
           }}
         >
-          ▲ 上：白血球穿過微血管壁進行吞噬 ｜ 下：人體的防禦作用（點擊放大）
+          ▲ 圖 4-4 人體的防禦作用（點擊可全螢幕放大檢視三道防線運作）
         </div>
       </div>
     </div>
 
-    <PageFooter note="人體透過皮膜、白血球吞噬與淋巴球專一免疫三道防線維持健康。" />
+    <PageFooter note="人體透過皮膜屏障、白血球吞噬與淋巴球專一免疫三道防線維持健康。" />
   </div>
 );
 
@@ -2220,6 +2325,7 @@ export default [
   SlideTissueFluidCapillaries,
   SlideLymphaticCirculation,
   SlideLymphaticOrgans,
+  SlideWhiteBloodCells,
   SlideImmuneDefense,
   SlideExamTraps,
   SlideMnemonics,
