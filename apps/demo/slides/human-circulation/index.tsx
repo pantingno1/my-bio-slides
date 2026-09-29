@@ -2208,7 +2208,7 @@ const SlideMnemonics: Page = () => (
   </div>
 );
 
-export const pages: Page[] = [
+export default [
   Cover,
   SlideHeartStructure,
   SlideHeartContraction,
@@ -2223,7 +2223,7 @@ export const pages: Page[] = [
   SlideImmuneDefense,
   SlideExamTraps,
   SlideMnemonics,
-];
+] satisfies Page[];
 
 export const meta: SlideMeta = {
   title: '人體的循環與防禦系統',
