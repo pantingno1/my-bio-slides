@@ -101,7 +101,7 @@ const fill = {
 } as const;
 
 const PageHeader = ({
-  category = '國中自然科學 · 生物（一上）單元 4-3 ~ 4-4',
+  category = '國中自然科學 生物',
   title,
   subtitle,
 }: {
@@ -210,7 +210,7 @@ const Cover: Page = () => (
         }}
       >
         <span>●</span>
-        <span>國中自然科學 · 生物（一上）單元 4-3 ~ 4-4</span>
+        <span>國中自然科學 生物</span>
       </div>
 
       <h1
@@ -327,7 +327,6 @@ const Cover: Page = () => (
 const SlideHeartStructure: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-3 · 血液循環系統"
       title="心臟的位置與內部構造"
       subtitle="肌肉質的強大幫浦，掌握全身血液循環的動力中樞"
     />
@@ -473,11 +472,7 @@ const SlideHeartStructure: Page = () => (
 
 const SlideHeartContraction: Page = () => (
   <div style={fill}>
-    <PageHeader
-      category="單元 4-3 · 血液循環系統"
-      title="心臟的收縮與舒張"
-      subtitle="節律性搏動推進血液，單向循環不走回頭路"
-    />
+    <PageHeader title="心臟的收縮與舒張" subtitle="節律性搏動推進血液，單向循環不走回頭路" />
 
     <div
       style={{
@@ -612,7 +607,6 @@ const SlideHeartContraction: Page = () => (
 const SlideBloodVessels: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-3 · 血液循環系統"
       title="動脈、微血管與靜脈之比較"
       subtitle="不同血管構造精準適應血壓環境與物質交換機能"
     />
@@ -758,11 +752,7 @@ const SlideBloodVessels: Page = () => (
 
 const SlideBloodFlowExchange: Page = () => (
   <div style={fill}>
-    <PageHeader
-      category="單元 4-3 · 血液循環系統"
-      title="血液流動規律與物質交換"
-      subtitle="血壓梯度、流速調節與微血管擴散作用機制"
-    />
+    <PageHeader title="血液流動規律與物質交換" subtitle="血壓梯度、流速調節與微血管擴散作用機制" />
 
     <div
       style={{
@@ -905,7 +895,6 @@ const SlideBloodFlowExchange: Page = () => (
 const SlideLabHeartSoundPulse: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-3 · 實驗探究"
       title="探究實驗 4-2：探測心音與脈搏"
       subtitle="同頻率的生理律動，迥異的物理成因與量測原理"
     />
@@ -1044,7 +1033,6 @@ const SlideLabHeartSoundPulse: Page = () => (
 const SlideSystemicCirculation: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-4 · 人體的循環"
       title="體循環：全身物質的分配與代謝"
       subtitle="大循環途徑，將充氧血輸往全身組織細胞並帶走代謝廢物"
     />
@@ -1167,7 +1155,6 @@ const SlideSystemicCirculation: Page = () => (
 const SlidePulmonaryCirculation: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-4 · 人體的循環"
       title="肺循環：氣體交換與血液充氧"
       subtitle="小循環途徑，前往肺泡微血管排出二氧化碳並補充新鮮氧氣"
     />
@@ -1308,7 +1295,6 @@ const SlidePulmonaryCirculation: Page = () => (
 const SlideTissueFluidCapillaries: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-4 · 人體的循環"
       title="體液平衡：組織液與淋巴微管"
       subtitle="微血管滲透、細胞浸潤與盲端淋巴微管的液體回收機制"
     />
@@ -1446,7 +1432,6 @@ const SlideTissueFluidCapillaries: Page = () => (
 const SlideLymphaticCirculation: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-4 · 人體的循環"
       title="淋巴循環途徑與防禦過濾"
       subtitle="單向流動的淋巴網絡、瓣膜防逆流機制與淋巴結過濾屏障"
     />
@@ -1586,7 +1571,6 @@ const SlideLymphaticCirculation: Page = () => (
 const SlideLymphaticOrgans: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-4 · 人體的循環"
       title="人體的淋巴器官與免疫屏障"
       subtitle="淋巴結、脾臟、扁桃腺與胸腺的全身戰略分佈"
     />
@@ -1731,7 +1715,6 @@ const SlideLymphaticOrgans: Page = () => (
 const SlideWhiteBloodCells: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-3 · 血液循環系統"
       title="白血球的變形蟲運動與吞噬作用"
       subtitle="穿透微血管壁抵達感染部位，人體內部的守護衛士"
     />
@@ -1868,7 +1851,6 @@ const SlideWhiteBloodCells: Page = () => (
 const SlideImmuneDefense: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-4 · 人體的防禦作用"
       title="人體防禦機制：三道防線全景"
       subtitle="皮膜物理屏障、非專一性發炎與專一性淋巴球抗體防護"
     />
@@ -2014,7 +1996,6 @@ const SlideImmuneDefense: Page = () => (
 const SlideExamTraps: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-3 ~ 4-4 · 會考命題焦點"
       title="會考常考四大易錯盲點辨析"
       subtitle="精準釐清生理盲點，避開歷屆會考高頻失分地雷"
     />
@@ -2181,7 +2162,6 @@ const SlideExamTraps: Page = () => (
 const SlideMnemonics: Page = () => (
   <div style={fill}>
     <PageHeader
-      category="單元 4-3 ~ 4-4 · 滿分衝刺"
       title="循環與防禦滿分四大口訣"
       subtitle="核心觀念化繁為簡，秒殺會考題目的記憶神兵"
     />

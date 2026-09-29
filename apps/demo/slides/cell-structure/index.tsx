@@ -96,7 +96,7 @@ const fill = {
 } as const;
 
 const PageHeader = ({
-  category = '國中自然科學 · 生物（一上）單元 2',
+  category = '國中自然科學 生物',
   title,
   subtitle,
 }: {

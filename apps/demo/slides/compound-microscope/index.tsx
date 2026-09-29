@@ -88,7 +88,7 @@ const fill = {
 } as const;
 
 const PageHeader = ({
-  category = '國中自然科學 · 生物（一上）',
+  category = '國中自然科學 生物',
   title,
   subtitle,
 }: {
@@ -200,7 +200,7 @@ const Cover: Page = () => (
         }}
       >
         <span style={{ width: 10, height: 10, borderRadius: '50%', background: palette.teal }} />
-        國中自然科學 · 生物
+        國中自然科學 生物
       </div>
 
       <h1
