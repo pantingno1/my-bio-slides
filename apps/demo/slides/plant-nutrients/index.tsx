@@ -123,7 +123,7 @@ const PageHeader = ({
         marginBottom: 8,
       }}
     >
-      <span style={{ fontSize: 20 }}>●國中自然科學 · 生物</span>
+      <span style={{ fontSize: 20 }}>●</span>
       <span>{category}</span>
     </div>
     <h2
@@ -163,7 +163,7 @@ const PageFooter = ({ tip }: { tip?: string }) => {
         flexShrink: 0,
       }}
     >
-      <span>{tip ? `💡 重點提示：${tip}` : '國中自然科學 · 植物如何製造養分'}</span>
+      <span>{tip ? `💡 重點提示：${tip}` : '國中自然科學 · 植物如何獲得養分'}</span>
       <span
         style={{
           fontVariantNumeric: 'tabular-nums',
@@ -234,7 +234,9 @@ const Cover: Page = () => (
             borderRadius: '50%',
             background: palette.emerald,
           }}
-        />國中自然科學 · 生物</div>
+        />
+        國中自然科學 · 生物
+      </div>
 
       <h1
         style={{
@@ -257,7 +259,7 @@ const Cover: Page = () => (
             fontSize: '96px',
           }}
         >
-          植物如何製造養分
+          植物如何獲得養分
         </span>
       </h1>
 
@@ -1924,7 +1926,7 @@ export const notes: (string | undefined)[] = [
 ];
 
 export const meta: SlideMeta = {
-  title: '植物如何製造養分',
+  title: '植物如何獲得養分',
   createdAt: '2026-09-18T06:40:00.000Z',
 };
 
