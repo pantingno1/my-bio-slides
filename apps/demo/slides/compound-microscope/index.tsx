@@ -178,131 +178,142 @@ const Cover: Page = () => (
     style={{
       ...fill,
       justifyContent: 'center',
-      padding: '80px 120px',
+      padding: '48px 120px 24px 120px',
       background: 'linear-gradient(135deg, #f8fafc 0%, #f0fdfa 100%)',
     }}
   >
-    <div style={{ display: 'flex', flexDirection: 'column', maxWidth: 1600 }}>
-      <div
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 12,
-          padding: '8px 20px',
-          borderRadius: 999,
-          background: palette.tealLight,
-          border: `1.5px solid ${palette.tealBorder}`,
-          color: palette.teal,
-          fontSize: '36px',
-          fontWeight: 700,
-          marginBottom: 36,
-          width: 'fit-content',
-        }}
-      >
-        <span style={{ width: 10, height: 10, borderRadius: '50%', background: palette.teal }} />
-        國中自然科學 生物
-      </div>
-
-      <h1
-        style={{
-          fontFamily: 'var(--osd-font-display)',
-          fontSize: 96,
-          fontWeight: 900,
-          color: palette.text,
-          margin: 0,
-          lineHeight: 1.15,
-          letterSpacing: '-0.03em',
-        }}
-      >
-        複式顯微鏡構造與操作指引
-      </h1>
-
-      <p
-        style={{
-          fontSize: 38,
-          color: palette.muted,
-          margin: '24px 0 54px 0',
-          lineHeight: 1.5,
-          maxWidth: 1280,
-        }}
-      >
-        走進微觀世界 — 從光學構造認識、標準八步操作法，到成像特性解析與實驗疑難排除全攻略。
-      </p>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', maxWidth: 1600 }}>
         <div
           style={{
-            background: palette.surface,
-            borderRadius: 16,
-            padding: 24,
-            border: `1px solid ${palette.border}`,
-            boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 12,
+            padding: '8px 20px',
+            borderRadius: 999,
+            background: palette.tealLight,
+            border: `1.5px solid ${palette.tealBorder}`,
+            color: palette.teal,
+            fontSize: '36px',
+            fontWeight: 700,
+            marginBottom: 36,
+            width: 'fit-content',
           }}
         >
-          <div style={{ fontSize: 38, marginBottom: 8 }}>🔬</div>
-          <div style={{ fontSize: '32px', fontWeight: 700, color: palette.text, marginBottom: 6 }}>
-            微觀尺度與光學
-          </div>
-          <div style={{ fontSize: 24, color: palette.muted, lineHeight: 1.5 }}>
-            放大 40X ~ 1000X，樣本須薄而透光
-          </div>
+          <span style={{ width: 10, height: 10, borderRadius: '50%', background: palette.teal }} />
+          國中自然科學 生物
         </div>
 
-        <div
+        <h1
           style={{
-            background: palette.surface,
-            borderRadius: 16,
-            padding: 24,
-            border: `1px solid ${palette.border}`,
-            boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+            fontFamily: 'var(--osd-font-display)',
+            fontSize: 96,
+            fontWeight: 900,
+            color: palette.text,
+            margin: 0,
+            lineHeight: 1.15,
+            letterSpacing: '-0.03em',
           }}
         >
-          <div style={{ fontSize: 38, marginBottom: 8 }}>⚙️</div>
-          <div style={{ fontSize: '32px', fontWeight: 700, color: palette.text, marginBottom: 6 }}>
-            三大構造系統
-          </div>
-          <div style={{ fontSize: 24, color: palette.muted, lineHeight: 1.5 }}>
-            光學放大、聚光照明與調焦載物機構
-          </div>
-        </div>
+          複式顯微鏡構造與操作指引
+        </h1>
 
-        <div
+        <p
           style={{
-            background: palette.surface,
-            borderRadius: 16,
-            padding: 24,
-            border: `1px solid ${palette.border}`,
-            boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+            fontSize: 38,
+            color: palette.muted,
+            margin: '24px 0 54px 0',
+            lineHeight: 1.5,
+            maxWidth: 1280,
           }}
         >
-          <div style={{ fontSize: 38, marginBottom: 8 }}>🎯</div>
-          <div style={{ fontSize: '32px', fontWeight: 700, color: palette.text, marginBottom: 6 }}>
-            標準操作流程
-          </div>
-          <div style={{ fontSize: 24, color: palette.muted, lineHeight: 1.5 }}>
-            側面升臺防撞擊、反向調焦尋影像
-          </div>
-        </div>
+          走進微觀世界 — 從光學構造認識、標準八步操作法，到成像特性解析與實驗疑難排除全攻略。
+        </p>
 
-        <div
-          style={{
-            background: palette.surface,
-            borderRadius: 16,
-            padding: 24,
-            border: `1px solid ${palette.border}`,
-            boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
-          }}
-        >
-          <div style={{ fontSize: 38, marginBottom: 8 }}>🔄</div>
-          <div style={{ fontSize: '32px', fontWeight: 700, color: palette.text, marginBottom: 6 }}>
-            成像與同向移動
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+          <div
+            style={{
+              background: palette.surface,
+              borderRadius: 16,
+              padding: 24,
+              border: `1px solid ${palette.border}`,
+              boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+            }}
+          >
+            <div style={{ fontSize: 38, marginBottom: 8 }}>🔬</div>
+            <div
+              style={{ fontSize: '32px', fontWeight: 700, color: palette.text, marginBottom: 6 }}
+            >
+              微觀尺度與光學
+            </div>
+            <div style={{ fontSize: 24, color: palette.muted, lineHeight: 1.5 }}>
+              放大 40X ~ 1000X，樣本須薄而透光
+            </div>
           </div>
-          <div style={{ fontSize: 24, color: palette.muted, lineHeight: 1.5 }}>
-            倒立放大虛像，像在何處玻片往哪推
+
+          <div
+            style={{
+              background: palette.surface,
+              borderRadius: 16,
+              padding: 24,
+              border: `1px solid ${palette.border}`,
+              boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+            }}
+          >
+            <div style={{ fontSize: 38, marginBottom: 8 }}>⚙️</div>
+            <div
+              style={{ fontSize: '32px', fontWeight: 700, color: palette.text, marginBottom: 6 }}
+            >
+              三大構造系統
+            </div>
+            <div style={{ fontSize: 24, color: palette.muted, lineHeight: 1.5 }}>
+              光學放大、聚光照明與調焦載物機構
+            </div>
+          </div>
+
+          <div
+            style={{
+              background: palette.surface,
+              borderRadius: 16,
+              padding: 24,
+              border: `1px solid ${palette.border}`,
+              boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+            }}
+          >
+            <div style={{ fontSize: 38, marginBottom: 8 }}>🎯</div>
+            <div
+              style={{ fontSize: '32px', fontWeight: 700, color: palette.text, marginBottom: 6 }}
+            >
+              標準操作流程
+            </div>
+            <div style={{ fontSize: 24, color: palette.muted, lineHeight: 1.5 }}>
+              側面升臺防撞擊、反向調焦尋影像
+            </div>
+          </div>
+
+          <div
+            style={{
+              background: palette.surface,
+              borderRadius: 16,
+              padding: 24,
+              border: `1px solid ${palette.border}`,
+              boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+            }}
+          >
+            <div style={{ fontSize: 38, marginBottom: 8 }}>🔄</div>
+            <div
+              style={{ fontSize: '32px', fontWeight: 700, color: palette.text, marginBottom: 6 }}
+            >
+              成像與同向移動
+            </div>
+            <div style={{ fontSize: 24, color: palette.muted, lineHeight: 1.5 }}>
+              倒立放大虛像，像在何處玻片往哪推
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <PageFooter tip="國中自然科學 · 生物（一上）單元 1-3 顯微鏡構造與操作" />
   </div>
 );
 

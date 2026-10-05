@@ -183,139 +183,150 @@ const Cover: Page = () => (
       ...fill,
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '80px 100px',
+      padding: '48px 100px 24px 100px',
       background: 'radial-gradient(circle at 18% 25%, #fff7ed 0%, #fcfaf8 55%, #fee2e2 100%)',
     }}
   >
     <div
       style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: 8,
-        background: 'linear-gradient(90deg, #c2410c 0%, #d97706 50%, #be123c 100%)',
-      }}
-    />
-
-    <div
-      style={{
-        maxWidth: 1440,
-        width: '100%',
+        flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start',
-        gap: 26,
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <div
         style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 10,
-          padding: '8px 22px',
-          borderRadius: 999,
-          background: palette.rustLight,
-          border: `1px solid ${palette.rustBorder}`,
-          color: palette.rust,
-          fontSize: 22,
-          fontWeight: 700,
-          letterSpacing: '0.06em',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 8,
+          background: 'linear-gradient(90deg, #c2410c 0%, #d97706 50%, #be123c 100%)',
         }}
-      >
-        <span
-          style={{
-            width: 10,
-            height: 10,
-            borderRadius: '50%',
-            background: palette.rust,
-          }}
-        />
-        國中自然科學 生物
-      </div>
-
-      <h1
-        style={{
-          fontFamily: 'var(--osd-font-display)',
-          fontSize: '96px',
-          fontWeight: 900,
-          color: palette.text,
-          margin: '0 0 10px 0',
-          lineHeight: 1.15,
-          letterSpacing: '-0.03em',
-        }}
-      >
-        <span>生命工廠的拆解與吸收</span>
-        <br />
-        <span
-          style={{
-            background: 'linear-gradient(135deg, #c2410c 0%, #d97706 50%, #be123c 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            fontSize: '96px',
-          }}
-        >
-          人體如何獲得養分
-        </span>
-      </h1>
-
-      <p
-        style={{
-          fontSize: '28px',
-          color: palette.muted,
-          margin: 0,
-          maxWidth: 1060,
-          lineHeight: 1.55,
-        }}
-      >
-        從消化管連續通道、消化腺與酵素分工、小腸絨毛網球場級吸收特化，到會考必考實驗與觀念陷阱全面突破
-      </p>
+      />
 
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 20,
+          maxWidth: 1440,
           width: '100%',
-          marginTop: 18,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          gap: 26,
         }}
       >
-        {[
-          { icon: '🔄', tag: '消化全覽', desc: '物理碾磨 vs 酵素化學分解' },
-          { icon: '🗺️', tag: '消化器官地圖', desc: '消化管通道與五大消化腺' },
-          { icon: '⚡', tag: '絨毛吸收特化', desc: '微血管與乳糜管雙軌吸收' },
-          { icon: '🧪', tag: '探究實驗', desc: '溫度對唾液澱粉酶活性影響' },
-        ].map((item) => (
-          <div
-            key={item.tag}
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 10,
+            padding: '8px 22px',
+            borderRadius: 999,
+            background: palette.rustLight,
+            border: `1px solid ${palette.rustBorder}`,
+            color: palette.rust,
+            fontSize: 22,
+            fontWeight: 700,
+            letterSpacing: '0.06em',
+          }}
+        >
+          <span
             style={{
-              background: palette.surface,
-              border: `1px solid ${palette.border}`,
-              borderRadius: 18,
-              padding: '20px 22px',
-              boxShadow: '0 10px 25px -5px rgba(28, 25, 23, 0.05)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 8,
+              width: 10,
+              height: 10,
+              borderRadius: '50%',
+              background: palette.rust,
+            }}
+          />
+          國中自然科學 生物
+        </div>
+
+        <h1
+          style={{
+            fontFamily: 'var(--osd-font-display)',
+            fontSize: '96px',
+            fontWeight: 900,
+            color: palette.text,
+            margin: '0 0 10px 0',
+            lineHeight: 1.15,
+            letterSpacing: '-0.03em',
+          }}
+        >
+          <span>生命工廠的拆解與吸收</span>
+          <br />
+          <span
+            style={{
+              background: 'linear-gradient(135deg, #c2410c 0%, #d97706 50%, #be123c 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontSize: '96px',
             }}
           >
-            <div style={{ fontSize: '34px' }}>{item.icon}</div>
+            人體如何獲得養分
+          </span>
+        </h1>
+
+        <p
+          style={{
+            fontSize: '28px',
+            color: palette.muted,
+            margin: 0,
+            maxWidth: 1060,
+            lineHeight: 1.55,
+          }}
+        >
+          從消化管連續通道、消化腺與酵素分工、小腸絨毛網球場級吸收特化，到會考必考實驗與觀念陷阱全面突破
+        </p>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 20,
+            width: '100%',
+            marginTop: 18,
+          }}
+        >
+          {[
+            { icon: '🔄', tag: '消化全覽', desc: '物理碾磨 vs 酵素化學分解' },
+            { icon: '🗺️', tag: '消化器官地圖', desc: '消化管通道與五大消化腺' },
+            { icon: '⚡', tag: '絨毛吸收特化', desc: '微血管與乳糜管雙軌吸收' },
+            { icon: '🧪', tag: '探究實驗', desc: '溫度對唾液澱粉酶活性影響' },
+          ].map((item) => (
             <div
+              key={item.tag}
               style={{
-                fontSize: '24px',
-                fontWeight: 800,
-                color: palette.rust,
+                background: palette.surface,
+                border: `1px solid ${palette.border}`,
+                borderRadius: 18,
+                padding: '20px 22px',
+                boxShadow: '0 10px 25px -5px rgba(28, 25, 23, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 8,
               }}
             >
-              {item.tag}
+              <div style={{ fontSize: '34px' }}>{item.icon}</div>
+              <div
+                style={{
+                  fontSize: '24px',
+                  fontWeight: 800,
+                  color: palette.rust,
+                }}
+              >
+                {item.tag}
+              </div>
+              <div style={{ fontSize: '20px', color: palette.muted, lineHeight: 1.4 }}>
+                {item.desc}
+              </div>
             </div>
-            <div style={{ fontSize: '20px', color: palette.muted, lineHeight: 1.4 }}>
-              {item.desc}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
+    <PageFooter tip="國中自然科學 · 生物（一上）單元 3-4 人體如何獲得養分" />
   </div>
 );
 

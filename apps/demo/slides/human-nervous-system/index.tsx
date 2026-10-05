@@ -163,153 +163,167 @@ const PageHeader = ({
   </div>
 );
 
-const PageFooter = ({ current, total }: { current: number; total: number }) => (
-  <div
-    style={{
-      marginTop: 'auto',
-      paddingTop: 10,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      borderTop: `1px solid ${palette.border}`,
-      fontSize: 20,
-      color: palette.faint,
-      flexShrink: 0,
-    }}
-  >
-    <span>國中自然科學 · 生物（一上）單元 5-1 ~ 5-2 人體神經系統</span>
-    <span>
-      {String(current).padStart(2, '0')}/{String(total).padStart(2, '0')}
-    </span>
-  </div>
-);
+const PageFooter = ({ tip }: { tip?: string }) => {
+  const { current, total } = useSlidePageNumber();
+  return (
+    <div
+      style={{
+        marginTop: 'auto',
+        paddingTop: 10,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        borderTop: `1px solid ${palette.border}`,
+        fontSize: 20,
+        color: palette.faint,
+        flexShrink: 0,
+      }}
+    >
+      <span>{tip || '國中自然科學 · 生物（一上）單元 5-1 ~ 5-2 人體神經系統'}</span>
+      <span
+        style={{
+          fontVariantNumeric: 'tabular-nums',
+          fontWeight: 600,
+          background: palette.surfaceSubtle,
+          padding: '2px 10px',
+          borderRadius: 999,
+          color: palette.muted,
+        }}
+      >
+        {String(current).padStart(2, '0')} / {String(total).padStart(2, '0')}
+      </span>
+    </div>
+  );
+};
 
 const Cover: Page = () => (
   <div
     style={{
       ...fill,
       justifyContent: 'center',
-      padding: '72px 88px',
+      padding: '48px 88px 24px 88px',
       background: 'radial-gradient(circle at 10% 20%, #f5f3ff 0%, #ffffff 60%, #eef2ff 100%)',
     }}
   >
-    <div
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: 10,
-        fontSize: 22,
-        fontWeight: 700,
-        color: palette.indigo,
-        marginBottom: 20,
-        letterSpacing: '0.04em',
-      }}
-    >
-      <span style={{ fontSize: 22 }}>●</span>
-      <span>國中自然科學 生物</span>
-    </div>
-
-    <h1
-      style={{
-        fontSize: 68,
-        fontWeight: 900,
-        color: palette.text,
-        margin: '0 0 16px 0',
-        lineHeight: 1.1,
-        letterSpacing: '-0.03em',
-      }}
-    >
-      人體的協調與神經系統
-    </h1>
-
-    <p
-      style={{
-        fontSize: 26,
-        color: palette.muted,
-        margin: '0 0 44px 0',
-        lineHeight: 1.5,
-        maxWidth: 1400,
-      }}
-    >
-      刺激與受器偵測環境、神經元訊號傳導、中樞與周圍協同、意識行為與反射弧全方位解析
-    </p>
-
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: 20,
-        maxWidth: 1720,
-      }}
-    >
-      {[
-        {
-          no: '01',
-          title: '感覺受器與神經元',
-          desc: '眼耳鼻舌皮膚專一感測環境，細胞體、樹突與軸突的電化學訊號傳導。',
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <div
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 10,
+          fontSize: 22,
+          fontWeight: 700,
           color: palette.indigo,
-          bg: palette.indigoLight,
-          border: palette.indigoBorder,
-        },
-        {
-          no: '02',
-          title: '中樞與周圍神經',
-          desc: '大腦、小腦、腦幹與脊髓四大樞紐，腦神經 12 對與脊神經 31 對網絡。',
-          color: palette.violet,
-          bg: palette.violetLight,
-          border: palette.violetBorder,
-        },
-        {
-          no: '03',
-          title: '意識動作與反射弧',
-          desc: '大腦決策隨意運動，脊髓與腦幹緊急避險反射，先縮後痛時序解碼。',
-          color: palette.cyan,
-          bg: palette.cyanLight,
-          border: palette.cyanBorder,
-        },
-        {
-          no: '04',
-          title: '接尺實驗與系統比較',
-          desc: '探究實驗 5-1 反應時間測定，神經與內分泌系統反應速度與範圍大對決。',
-          color: palette.amber,
-          bg: palette.amberLight,
-          border: palette.amberBorder,
-        },
-      ].map((card) => (
-        <div
-          key={card.no}
-          style={{
-            padding: '24px 24px',
-            borderRadius: 16,
-            background: card.bg,
-            border: `1.5px solid ${card.border}`,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 10,
-          }}
-        >
-          <span style={{ fontSize: 20, fontWeight: 800, color: card.color }}>{card.no}</span>
-          <h3 style={{ fontSize: 24, fontWeight: 800, color: palette.text, margin: 0 }}>
-            {card.title}
-          </h3>
-          <p
+          marginBottom: 20,
+          letterSpacing: '0.04em',
+        }}
+      >
+        <span style={{ fontSize: 22 }}>●</span>
+        <span>國中自然科學 生物</span>
+      </div>
+
+      <h1
+        style={{
+          fontSize: 68,
+          fontWeight: 900,
+          color: palette.text,
+          margin: '0 0 16px 0',
+          lineHeight: 1.1,
+          letterSpacing: '-0.03em',
+        }}
+      >
+        人體的協調與神經系統
+      </h1>
+
+      <p
+        style={{
+          fontSize: 26,
+          color: palette.muted,
+          margin: '0 0 44px 0',
+          lineHeight: 1.5,
+          maxWidth: 1400,
+        }}
+      >
+        刺激與受器偵測環境、神經元訊號傳導、中樞與周圍協同、意識行為與反射弧全方位解析
+      </p>
+
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 20,
+          maxWidth: 1720,
+        }}
+      >
+        {[
+          {
+            no: '01',
+            title: '感覺受器與神經元',
+            desc: '眼耳鼻舌皮膚專一感測環境，細胞體、樹突與軸突的電化學訊號傳導。',
+            color: palette.indigo,
+            bg: palette.indigoLight,
+            border: palette.indigoBorder,
+          },
+          {
+            no: '02',
+            title: '中樞與周圍神經',
+            desc: '大腦、小腦、腦幹與脊髓四大樞紐，腦神經 12 對與脊神經 31 對網絡。',
+            color: palette.violet,
+            bg: palette.violetLight,
+            border: palette.violetBorder,
+          },
+          {
+            no: '03',
+            title: '意識動作與反射弧',
+            desc: '大腦決策隨意運動，脊髓與腦幹緊急避險反射，先縮後痛時序解碼。',
+            color: palette.cyan,
+            bg: palette.cyanLight,
+            border: palette.cyanBorder,
+          },
+          {
+            no: '04',
+            title: '接尺實驗與系統比較',
+            desc: '探究實驗 5-1 反應時間測定，神經與內分泌系統反應速度與範圍大對決。',
+            color: palette.amber,
+            bg: palette.amberLight,
+            border: palette.amberBorder,
+          },
+        ].map((card) => (
+          <div
+            key={card.no}
             style={{
-              fontSize: 20,
-              color: palette.muted,
-              margin: 0,
-              lineHeight: 1.45,
+              padding: '24px 24px',
+              borderRadius: 16,
+              background: card.bg,
+              border: `1.5px solid ${card.border}`,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 10,
             }}
           >
-            {card.desc}
-          </p>
-        </div>
-      ))}
+            <span style={{ fontSize: 20, fontWeight: 800, color: card.color }}>{card.no}</span>
+            <h3 style={{ fontSize: 24, fontWeight: 800, color: palette.text, margin: 0 }}>
+              {card.title}
+            </h3>
+            <p
+              style={{
+                fontSize: 20,
+                color: palette.muted,
+                margin: 0,
+                lineHeight: 1.45,
+              }}
+            >
+              {card.desc}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
+    <PageFooter />
   </div>
 );
 
 const SlideReceptorsEyeEar: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 2;
   return (
     <div style={fill}>
       <PageHeader
@@ -466,13 +480,12 @@ const SlideReceptorsEyeEar: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideReceptorsNoseTongue: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 3;
   return (
     <div style={fill}>
       <PageHeader
@@ -606,7 +619,8 @@ const SlideReceptorsNoseTongue: Page = () => {
               </li>
               <li>
                 <strong>五大基本味覺：</strong>
-                酸、甜、苦、鹹、鮮。<em>注意：辣覺並非味覺，而是化學物質刺激舌面產生的「痛覺與溫熱感」！</em>
+                酸、甜、苦、鹹、鮮。
+                <em>注意：辣覺並非味覺，而是化學物質刺激舌面產生的「痛覺與溫熱感」！</em>
               </li>
             </ul>
           </div>
@@ -629,19 +643,15 @@ const SlideReceptorsNoseTongue: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideReceptorsSkin: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 4;
   return (
     <div style={fill}>
-      <PageHeader
-        title="體表防線：皮膚感覺受器"
-        subtitle="觸、壓、冷、熱、痛多維度環境監控屏障"
-      />
+      <PageHeader title="體表防線：皮膚感覺受器" subtitle="觸、壓、冷、熱、痛多維度環境監控屏障" />
       <div
         style={{
           display: 'grid',
@@ -702,7 +712,9 @@ const SlideReceptorsSkin: Page = () => {
                 }}
               >
                 <strong style={{ fontSize: 20, color: palette.indigo }}>觸覺與壓覺：</strong>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.muted, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.muted, lineHeight: 1.5 }}
+                >
                   觸覺受器靠近表皮偵測輕微接觸；壓覺受器位於真皮深層偵測重壓形變。
                 </p>
               </div>
@@ -715,7 +727,9 @@ const SlideReceptorsSkin: Page = () => {
                 }}
               >
                 <strong style={{ fontSize: 20, color: palette.cyan }}>冷覺與熱覺（溫覺）：</strong>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.muted, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.muted, lineHeight: 1.5 }}
+                >
                   偵測皮膚溫度變化。溫覺具有相對性（例如溫水實驗中的相對冷熱感受）。
                 </p>
               </div>
@@ -757,13 +771,12 @@ const SlideReceptorsSkin: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideNeuronStructure: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 5;
   return (
     <div style={fill}>
       <PageHeader
@@ -838,7 +851,9 @@ const SlideNeuronStructure: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.indigo }}>
                   ① 細胞體 (Cell Body)
                 </div>
-                <p style={{ margin: '8px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '8px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
                   內含<strong>細胞核</strong>與細胞質，負責神經細胞的代謝、生長修復與能量維持。
                 </p>
               </div>
@@ -854,7 +869,9 @@ const SlideNeuronStructure: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.violet }}>
                   ② 神經突起 (Processes)
                 </div>
-                <p style={{ margin: '8px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '8px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
                   由細胞質向外延伸：<strong>樹突</strong>（多而短，接收刺激）與
                   <strong>軸突</strong>（長而單一，傳出訊息）。
                 </p>
@@ -910,15 +927,36 @@ const SlideNeuronStructure: Page = () => {
                 marginTop: 6,
               }}
             >
-              <div style={{ background: palette.blueLight, padding: 12, borderRadius: 8, fontSize: 20 }}>
+              <div
+                style={{
+                  background: palette.blueLight,
+                  padding: 12,
+                  borderRadius: 8,
+                  fontSize: 20,
+                }}
+              >
                 <strong style={{ color: palette.blue }}>感覺神經元：</strong>
                 <div style={{ color: palette.text, marginTop: 4 }}>傳導受器訊息進入中樞神經</div>
               </div>
-              <div style={{ background: palette.emeraldLight, padding: 12, borderRadius: 8, fontSize: 20 }}>
+              <div
+                style={{
+                  background: palette.emeraldLight,
+                  padding: 12,
+                  borderRadius: 8,
+                  fontSize: 20,
+                }}
+              >
                 <strong style={{ color: palette.emerald }}>聯絡神經元：</strong>
                 <div style={{ color: palette.text, marginTop: 4 }}>中樞內整合分析與轉發訊息</div>
               </div>
-              <div style={{ background: palette.roseLight, padding: 12, borderRadius: 8, fontSize: 20 }}>
+              <div
+                style={{
+                  background: palette.roseLight,
+                  padding: 12,
+                  borderRadius: 8,
+                  fontSize: 20,
+                }}
+              >
                 <strong style={{ color: palette.rose }}>運動神經元：</strong>
                 <div style={{ color: palette.text, marginTop: 4 }}>將中樞命令傳出至肌肉或腺體</div>
               </div>
@@ -926,13 +964,12 @@ const SlideNeuronStructure: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideNervousHierarchy: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 6;
   return (
     <div style={fill}>
       <PageHeader
@@ -1017,7 +1054,8 @@ const SlideNervousHierarchy: Page = () => {
                 ，主管意識思維、感覺整合、運動指令與生命中樞。
               </li>
               <li>
-                <strong>脊髓 (Spinal Cord)：</strong>由脊柱保護，負責<strong>頸部以下身體的反射</strong>
+                <strong>脊髓 (Spinal Cord)：</strong>由脊柱保護，負責
+                <strong>頸部以下身體的反射</strong>
                 與大腦神經衝動上傳下達的傳導大動脈。
               </li>
             </ul>
@@ -1089,13 +1127,12 @@ const SlideNervousHierarchy: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideNervousOverview: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 7;
   return (
     <div style={fill}>
       <PageHeader
@@ -1222,7 +1259,8 @@ const SlideNervousOverview: Page = () => {
               會考黃金解題準則：受器與動器的神經連結
             </h3>
             <p style={{ fontSize: 20, color: palette.text, margin: 0, lineHeight: 1.6 }}>
-              判斷神經路徑是否經過脊髓的關鍵：<strong>「受器或動器位於頸部以上還是頸部以下」</strong>
+              判斷神經路徑是否經過脊髓的關鍵：
+              <strong>「受器或動器位於頸部以上還是頸部以下」</strong>
               。頭部受器（如看書的眼睛）由<strong>腦神經</strong>
               傳入大腦；若動器在四肢（如手寫字），命令則必須先經<strong>脊髓</strong>
               再轉<strong>脊神經</strong>到達手部肌肉！
@@ -1230,13 +1268,12 @@ const SlideNervousOverview: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideCentralNervousSystem: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 8;
   return (
     <div style={fill}>
       <PageHeader
@@ -1416,19 +1453,15 @@ const SlideCentralNervousSystem: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideBrainFunctionalAreas: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 9;
   return (
     <div style={fill}>
-      <PageHeader
-        title="腦的功能分區與精密調節"
-        subtitle="大腦皮質專屬機能區與交叉支配支配規律"
-      />
+      <PageHeader title="腦的功能分區與精密調節" subtitle="大腦皮質專屬機能區與交叉支配支配規律" />
       <div
         style={{
           display: 'grid',
@@ -1489,7 +1522,9 @@ const SlideBrainFunctionalAreas: Page = () => {
                 }}
               >
                 <strong style={{ fontSize: 20, color: palette.indigo }}>感覺區 (Sensory)：</strong>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
                   接收視覺（枕葉）、聽覺（顳葉）、體表觸覺頂葉等訊號並產生知覺。
                 </p>
               </div>
@@ -1502,7 +1537,9 @@ const SlideBrainFunctionalAreas: Page = () => {
                 }}
               >
                 <strong style={{ fontSize: 20, color: palette.rose }}>運動區 (Motor)：</strong>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
                   發出神經衝動指揮特定骨骼肌進行精準收縮，產生意志動作。
                 </p>
               </div>
@@ -1542,19 +1579,19 @@ const SlideBrainFunctionalAreas: Page = () => {
               <li>
                 <strong>植物人 vs 腦死：</strong>
                 植物人大腦皮層受損（失去意識、無法思考），但<strong>腦幹完好</strong>
-                （能自主呼吸、維持心跳）；腦死則是<strong>腦幹功能衰竭</strong>，必須仰賴呼吸器維生。
+                （能自主呼吸、維持心跳）；腦死則是<strong>腦幹功能衰竭</strong>
+                ，必須仰賴呼吸器維生。
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideConsciousActionPathway: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 10;
   return (
     <div style={fill}>
       <PageHeader
@@ -1641,7 +1678,8 @@ const SlideConsciousActionPathway: Page = () => {
                 <strong>② 感覺傳入：</strong>視神經（腦神經）將訊息直接傳送至中樞。
               </div>
               <div>
-                <strong>③ 中樞判斷：</strong><strong>大腦皮層</strong>
+                <strong>③ 中樞判斷：</strong>
+                <strong>大腦皮層</strong>
                 分析題目含意、提取記憶並下達作答命令。
               </div>
               <div>
@@ -1692,13 +1730,12 @@ const SlideConsciousActionPathway: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideReflexVsConscious: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 11;
   return (
     <div style={fill}>
       <PageHeader
@@ -1862,13 +1899,12 @@ const SlideReflexVsConscious: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideLabReactionTime: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 12;
   return (
     <div style={fill}>
       <PageHeader
@@ -2010,13 +2046,12 @@ const SlideLabReactionTime: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideNervousVsEndocrine: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 13;
   return (
     <div style={fill}>
       <PageHeader
@@ -2087,7 +2122,11 @@ const SlideNervousVsEndocrine: Page = () => {
               { item: '傳遞介質', n: '神經纖維（電化學衝動）', e: '血液循環（激素/荷爾蒙）' },
               { item: '反應速度', n: '極快（毫秒即時發生）', e: '緩慢（數秒、數小時甚至數年）' },
               { item: '作用範圍', n: '精確、局限特定肌肉腺體', e: '廣泛、遍及全身具受體標的器官' },
-              { item: '持續時間', n: '短暫（刺激停止即刻中止）', e: '持久（待血液中激素緩慢分解）' },
+              {
+                item: '持續時間',
+                n: '短暫（刺激停止即刻中止）',
+                e: '持久（待血液中激素緩慢分解）',
+              },
             ].map((row) => (
               <div
                 key={row.item}
@@ -2125,13 +2164,12 @@ const SlideNervousVsEndocrine: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideExamPitfalls: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 14;
   return (
     <div style={fill}>
       <PageHeader
@@ -2279,7 +2317,8 @@ const SlideExamPitfalls: Page = () => {
               lineHeight: 1.6,
             }}
           >
-            <strong>正確觀念：</strong><strong>植物人</strong>為大腦嚴重受損但
+            <strong>正確觀念：</strong>
+            <strong>植物人</strong>為大腦嚴重受損但
             <strong>腦幹功能正常</strong>，保有自主心跳與呼吸；<strong>腦死</strong>
             則是<strong>腦幹功能衰竭喪失</strong>，自主生命徵象完全停止。
           </p>
@@ -2331,13 +2370,12 @@ const SlideExamPitfalls: Page = () => {
           </p>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideSummary: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 15;
   return (
     <div style={fill}>
       <PageHeader
@@ -2379,7 +2417,9 @@ const SlideSummary: Page = () => {
               textAlign: 'center',
             }}
           >
-            大腦想 · 小腦平<br />腦幹命 · 脊髓射
+            大腦想 · 小腦平
+            <br />
+            腦幹命 · 脊髓射
           </div>
           <ul
             style={{
@@ -2423,7 +2463,9 @@ const SlideSummary: Page = () => {
               textAlign: 'center',
             }}
           >
-            樹突入 · 軸突傳出<br />感覺傳入 · 運動傳出
+            樹突入 · 軸突傳出
+            <br />
+            感覺傳入 · 運動傳出
           </div>
           <ul
             style={{
@@ -2467,7 +2509,9 @@ const SlideSummary: Page = () => {
               textAlign: 'center',
             }}
           >
-            不經大腦救一命<br />先縮後痛時間差
+            不經大腦救一命
+            <br />
+            先縮後痛時間差
           </div>
           <ul
             style={{
@@ -2511,7 +2555,9 @@ const SlideSummary: Page = () => {
               textAlign: 'center',
             }}
           >
-            神經快短準如電報<br />激素慢長廣如郵件
+            神經快短準如電報
+            <br />
+            激素慢長廣如郵件
           </div>
           <ul
             style={{
@@ -2529,7 +2575,7 @@ const SlideSummary: Page = () => {
           </ul>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };

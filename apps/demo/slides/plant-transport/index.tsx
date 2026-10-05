@@ -187,144 +187,157 @@ const Cover: Page = () => (
       ...fill,
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '80px 100px',
+      padding: '48px 100px 24px 100px',
       background: 'radial-gradient(circle at 18% 25%, #f0fdf4 0%, #fcfbfa 55%, #fefce8 100%)',
     }}
   >
     <div
       style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: 8,
-        background: 'linear-gradient(90deg, #15803d 0%, #059669 40%, #0284c7 70%, #b45309 100%)',
-      }}
-    />
-
-    <div
-      style={{
-        maxWidth: 1440,
-        width: '100%',
+        flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start',
-        gap: 28,
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <div
         style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 10,
-          padding: '8px 22px',
-          borderRadius: 999,
-          background: palette.forestLight,
-          border: `1px solid ${palette.forestBorder}`,
-          color: palette.forest,
-          fontSize: 24,
-          fontWeight: 700,
-          letterSpacing: '0.06em',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 8,
+          background: 'linear-gradient(90deg, #15803d 0%, #059669 40%, #0284c7 70%, #b45309 100%)',
         }}
-      >
-        <span
-          style={{
-            width: 10,
-            height: 10,
-            borderRadius: '50%',
-            background: palette.forest,
-          }}
-        />
-        國中自然科學 生物
-      </div>
-
-      <h1
-        style={{
-          fontFamily: 'var(--osd-font-display)',
-          fontSize: '96px',
-          fontWeight: 900,
-          color: palette.text,
-          margin: '0 0 12px 0',
-          lineHeight: 1.15,
-          letterSpacing: '-0.03em',
-        }}
-      >
-        <span>綠色巨塔的無聲動脈</span>
-        <br />
-        <span
-          style={{
-            background: 'linear-gradient(135deg, #15803d 0%, #059669 50%, #0284c7 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            fontSize: '96px',
-          }}
-        >
-          植物體內物質的運輸
-        </span>
-      </h1>
-
-      <p
-        style={{
-          fontSize: '28px',
-          color: palette.muted,
-          margin: 0,
-          maxWidth: 1100,
-          lineHeight: 1.6,
-        }}
-      >
-        貫穿根、莖、葉的維管束網絡 · 木質部與水分蒸散拉力 · 韌皮部與有機養分雙向流動
-      </p>
+      />
 
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 20,
+          maxWidth: 1440,
           width: '100%',
-          marginTop: 18,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          gap: 28,
         }}
       >
-        {[
-          {
-            icon: '🌿',
-            title: '維管束分布',
-            desc: '根、莖、葉連續通道，散生與環狀排列比較',
-          },
-          {
-            icon: '🪵',
-            title: '樹皮與年輪',
-            desc: '形成層向內外分裂、木材死細胞與氣候年輪',
-          },
-          {
-            icon: '💧',
-            title: '水分蒸散作用',
-            desc: '根毛主動吸收、氣孔蒸散產生巨大上升牽引力',
-          },
-          {
-            icon: '🧪',
-            title: '芹菜染色實驗',
-            desc: '探究水分運輸途徑、橫縱切面紅墨水顯色驗證',
-          },
-        ].map((card) => (
-          <div
-            key={card.title}
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 10,
+            padding: '8px 22px',
+            borderRadius: 999,
+            background: palette.forestLight,
+            border: `1px solid ${palette.forestBorder}`,
+            color: palette.forest,
+            fontSize: 24,
+            fontWeight: 700,
+            letterSpacing: '0.06em',
+          }}
+        >
+          <span
             style={{
-              background: palette.surface,
-              borderRadius: 16,
-              padding: '20px 24px',
-              border: `1px solid ${palette.border}`,
-              boxShadow: '0 4px 16px -2px rgba(28, 25, 23, 0.05)',
+              width: 10,
+              height: 10,
+              borderRadius: '50%',
+              background: palette.forest,
+            }}
+          />
+          國中自然科學 生物
+        </div>
+
+        <h1
+          style={{
+            fontFamily: 'var(--osd-font-display)',
+            fontSize: '96px',
+            fontWeight: 900,
+            color: palette.text,
+            margin: '0 0 12px 0',
+            lineHeight: 1.15,
+            letterSpacing: '-0.03em',
+          }}
+        >
+          <span>綠色巨塔的無聲動脈</span>
+          <br />
+          <span
+            style={{
+              background: 'linear-gradient(135deg, #15803d 0%, #059669 50%, #0284c7 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontSize: '96px',
             }}
           >
-            <div style={{ fontSize: 32, marginBottom: 8 }}>{card.icon}</div>
-            <div style={{ fontSize: 24, fontWeight: 800, color: palette.text, marginBottom: 4 }}>
-              {card.title}
+            植物體內物質的運輸
+          </span>
+        </h1>
+
+        <p
+          style={{
+            fontSize: '28px',
+            color: palette.muted,
+            margin: 0,
+            maxWidth: 1100,
+            lineHeight: 1.6,
+          }}
+        >
+          貫穿根、莖、葉的維管束網絡 · 木質部與水分蒸散拉力 · 韌皮部與有機養分雙向流動
+        </p>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 20,
+            width: '100%',
+            marginTop: 18,
+          }}
+        >
+          {[
+            {
+              icon: '🌿',
+              title: '維管束分布',
+              desc: '根、莖、葉連續通道，散生與環狀排列比較',
+            },
+            {
+              icon: '🪵',
+              title: '樹皮與年輪',
+              desc: '形成層向內外分裂、木材死細胞與氣候年輪',
+            },
+            {
+              icon: '💧',
+              title: '水分蒸散作用',
+              desc: '根毛主動吸收、氣孔蒸散產生巨大上升牽引力',
+            },
+            {
+              icon: '🧪',
+              title: '芹菜染色實驗',
+              desc: '探究水分運輸途徑、橫縱切面紅墨水顯色驗證',
+            },
+          ].map((card) => (
+            <div
+              key={card.title}
+              style={{
+                background: palette.surface,
+                borderRadius: 16,
+                padding: '20px 24px',
+                border: `1px solid ${palette.border}`,
+                boxShadow: '0 4px 16px -2px rgba(28, 25, 23, 0.05)',
+              }}
+            >
+              <div style={{ fontSize: 32, marginBottom: 8 }}>{card.icon}</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: palette.text, marginBottom: 4 }}>
+                {card.title}
+              </div>
+              <div style={{ fontSize: 20, color: palette.muted, lineHeight: 1.45 }}>
+                {card.desc}
+              </div>
             </div>
-            <div style={{ fontSize: 20, color: palette.muted, lineHeight: 1.45 }}>{card.desc}</div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
+    <PageFooter tip="國中自然科學 · 生物（一上）單元 4-1 ~ 4-2 植物體內物質的運輸" />
   </div>
 );
 

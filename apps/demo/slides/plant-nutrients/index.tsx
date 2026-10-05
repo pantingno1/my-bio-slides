@@ -187,140 +187,151 @@ const Cover: Page = () => (
       ...fill,
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '80px 100px',
+      padding: '48px 100px 24px 100px',
       background: 'radial-gradient(circle at 18% 25%, #ecfdf5 0%, #f8fafc 55%, #f0fdf4 100%)',
     }}
   >
     <div
       style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: 8,
-        background: 'linear-gradient(90deg, #059669 0%, #10b981 50%, #0284c7 100%)',
-      }}
-    />
-
-    <div
-      style={{
-        maxWidth: 1440,
-        width: '100%',
+        flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start',
-        gap: 28,
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <div
         style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 10,
-          padding: '8px 22px',
-          borderRadius: 999,
-          background: palette.emeraldLight,
-          border: `1px solid ${palette.emeraldBorder}`,
-          color: palette.emerald,
-          fontSize: 26,
-          fontWeight: 700,
-          letterSpacing: '0.06em',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 8,
+          background: 'linear-gradient(90deg, #059669 0%, #10b981 50%, #0284c7 100%)',
         }}
-      >
-        <span
-          style={{
-            width: 10,
-            height: 10,
-            borderRadius: '50%',
-            background: palette.emerald,
-          }}
-        />
-        國中自然科學 生物
-      </div>
-
-      <h1
-        style={{
-          fontFamily: 'var(--osd-font-display)',
-          fontSize: '96px',
-          fontWeight: 900,
-          color: palette.text,
-          margin: '0 0 12px 0',
-          lineHeight: 1.15,
-          letterSpacing: '-0.03em',
-        }}
-      >
-        <span>綠色大地的光能奇蹟</span>
-        <br />
-        <span
-          style={{
-            background: 'linear-gradient(135deg, #059669 0%, #10b981 50%, #0284c7 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            fontSize: '96px',
-          }}
-        >
-          植物如何獲得養分
-        </span>
-      </h1>
-
-      <p
-        style={{
-          fontSize: '32px',
-          color: palette.muted,
-          margin: 0,
-          maxWidth: 1020,
-          lineHeight: 1.6,
-        }}
-      >
-        深度解析葉片微細構造、光合作用兩階段反應（光反應 vs
-        碳反應）、天竺葵光合作用檢驗實驗，以及養分合成、運輸與儲存全貌
-      </p>
+      />
 
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 20,
+          maxWidth: 1440,
           width: '100%',
-          marginTop: 20,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          gap: 28,
         }}
       >
-        {[
-          { icon: '🍃', tag: '葉片微細構造', desc: '表皮、葉肉、葉脈與氣孔' },
-          { icon: '☀️', tag: '光反應歷程', desc: '水分子光解產生氧氣與能量' },
-          { icon: '🔄', tag: '碳反應合成', desc: '酵素催化 CO2 固定生成葡萄糖' },
-          { icon: '🧪', tag: '探究驗證實驗', desc: '天竺葵遮光隔水加熱脫色' },
-        ].map((item) => (
-          <div
-            key={item.tag}
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 10,
+            padding: '8px 22px',
+            borderRadius: 999,
+            background: palette.emeraldLight,
+            border: `1px solid ${palette.emeraldBorder}`,
+            color: palette.emerald,
+            fontSize: 26,
+            fontWeight: 700,
+            letterSpacing: '0.06em',
+          }}
+        >
+          <span
             style={{
-              background: palette.surface,
-              border: `1px solid ${palette.border}`,
-              borderRadius: 18,
-              padding: '22px 24px',
-              boxShadow: '0 10px 25px -5px rgba(15, 23, 42, 0.05)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 8,
+              width: 10,
+              height: 10,
+              borderRadius: '50%',
+              background: palette.emerald,
+            }}
+          />
+          國中自然科學 生物
+        </div>
+
+        <h1
+          style={{
+            fontFamily: 'var(--osd-font-display)',
+            fontSize: '96px',
+            fontWeight: 900,
+            color: palette.text,
+            margin: '0 0 12px 0',
+            lineHeight: 1.15,
+            letterSpacing: '-0.03em',
+          }}
+        >
+          <span>綠色大地的光能奇蹟</span>
+          <br />
+          <span
+            style={{
+              background: 'linear-gradient(135deg, #059669 0%, #10b981 50%, #0284c7 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontSize: '96px',
             }}
           >
-            <div style={{ fontSize: '38px' }}>{item.icon}</div>
+            植物如何獲得養分
+          </span>
+        </h1>
+
+        <p
+          style={{
+            fontSize: '32px',
+            color: palette.muted,
+            margin: 0,
+            maxWidth: 1020,
+            lineHeight: 1.6,
+          }}
+        >
+          深度解析葉片微細構造、光合作用兩階段反應（光反應 vs
+          碳反應）、天竺葵光合作用檢驗實驗，以及養分合成、運輸與儲存全貌
+        </p>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 20,
+            width: '100%',
+            marginTop: 20,
+          }}
+        >
+          {[
+            { icon: '🍃', tag: '葉片微細構造', desc: '表皮、葉肉、葉脈與氣孔' },
+            { icon: '☀️', tag: '光反應歷程', desc: '水分子光解產生氧氣與能量' },
+            { icon: '🔄', tag: '碳反應合成', desc: '酵素催化 CO2 固定生成葡萄糖' },
+            { icon: '🧪', tag: '探究驗證實驗', desc: '天竺葵遮光隔水加熱脫色' },
+          ].map((item) => (
             <div
+              key={item.tag}
               style={{
-                fontSize: '28px',
-                fontWeight: 800,
-                color: palette.emerald,
+                background: palette.surface,
+                border: `1px solid ${palette.border}`,
+                borderRadius: 18,
+                padding: '22px 24px',
+                boxShadow: '0 10px 25px -5px rgba(15, 23, 42, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 8,
               }}
             >
-              {item.tag}
+              <div style={{ fontSize: '38px' }}>{item.icon}</div>
+              <div
+                style={{
+                  fontSize: '28px',
+                  fontWeight: 800,
+                  color: palette.emerald,
+                }}
+              >
+                {item.tag}
+              </div>
+              <div style={{ fontSize: '24px', color: palette.muted, lineHeight: 1.4 }}>
+                {item.desc}
+              </div>
             </div>
-            <div style={{ fontSize: '24px', color: palette.muted, lineHeight: 1.4 }}>
-              {item.desc}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
+    <PageFooter tip="國中自然科學 · 生物（一上）單元 3-3 植物如何獲得養分" />
   </div>
 );
 

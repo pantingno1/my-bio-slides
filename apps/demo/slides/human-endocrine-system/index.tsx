@@ -154,153 +154,167 @@ const PageHeader = ({
   </div>
 );
 
-const PageFooter = ({ current, total }: { current: number; total: number }) => (
-  <div
-    style={{
-      marginTop: 'auto',
-      paddingTop: 10,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      borderTop: `1px solid ${palette.border}`,
-      fontSize: 20,
-      color: palette.faint,
-      flexShrink: 0,
-    }}
-  >
-    <span>國中自然科學 · 生物（一上）單元 5-3 人體內分泌系統</span>
-    <span>
-      {String(current).padStart(2, '0')}/{String(total).padStart(2, '0')}
-    </span>
-  </div>
-);
+const PageFooter = ({ tip }: { tip?: string }) => {
+  const { current, total } = useSlidePageNumber();
+  return (
+    <div
+      style={{
+        marginTop: 'auto',
+        paddingTop: 10,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        borderTop: `1px solid ${palette.border}`,
+        fontSize: 20,
+        color: palette.faint,
+        flexShrink: 0,
+      }}
+    >
+      <span>{tip || '國中自然科學 · 生物（一上）單元 5-3 人體內分泌系統'}</span>
+      <span
+        style={{
+          fontVariantNumeric: 'tabular-nums',
+          fontWeight: 600,
+          background: palette.surfaceSubtle,
+          padding: '2px 10px',
+          borderRadius: 999,
+          color: palette.muted,
+        }}
+      >
+        {String(current).padStart(2, '0')} / {String(total).padStart(2, '0')}
+      </span>
+    </div>
+  );
+};
 
 const Cover: Page = () => (
   <div
     style={{
       ...fill,
       justifyContent: 'center',
-      padding: '72px 88px',
+      padding: '48px 88px 24px 88px',
       background: 'radial-gradient(circle at 10% 20%, #fffbeb 0%, #ffffff 60%, #fef3c7 100%)',
     }}
   >
-    <div
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: 10,
-        fontSize: 22,
-        fontWeight: 700,
-        color: palette.amber,
-        marginBottom: 20,
-        letterSpacing: '0.04em',
-      }}
-    >
-      <span style={{ fontSize: 22 }}>●</span>
-      <span>國中自然科學 生物</span>
-    </div>
-
-    <h1
-      style={{
-        fontSize: 68,
-        fontWeight: 900,
-        color: palette.text,
-        margin: '0 0 16px 0',
-        lineHeight: 1.1,
-        letterSpacing: '-0.03em',
-      }}
-    >
-      人體的調節與內分泌系統
-    </h1>
-
-    <p
-      style={{
-        fontSize: 26,
-        color: palette.muted,
-        margin: '0 0 44px 0',
-        lineHeight: 1.5,
-        maxWidth: 1400,
-      }}
-    >
-      無管腺體血液循環運輸、微量高效靶器官專一反應、各大腺體生理功能與回饋調節全景突破
-    </p>
-
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: 20,
-        maxWidth: 1720,
-      }}
-    >
-      {[
-        {
-          no: '01',
-          title: '內分泌腺本質特性',
-          desc: '無導管直接進入微血管，血液運送、微量高效，專一性作用於特定標的細胞。',
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <div
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 10,
+          fontSize: 22,
+          fontWeight: 700,
           color: palette.amber,
-          bg: palette.amberLight,
-          border: palette.amberBorder,
-        },
-        {
-          no: '02',
-          title: '人體主要腺體總覽',
-          desc: '腦垂腺總指揮、甲狀腺代謝、副甲狀腺血鈣、腎上腺應急、胰島與性腺分工。',
-          color: palette.rose,
-          bg: palette.roseLight,
-          border: palette.roseBorder,
-        },
-        {
-          no: '03',
-          title: '血糖與恆定回饋',
-          desc: '胰臟內外分泌兼具，胰島素與升糖素拮抗調控，負回饋抑制維護體內平衡。',
-          color: palette.indigo,
-          bg: palette.indigoLight,
-          border: palette.indigoBorder,
-        },
-        {
-          no: '04',
-          title: '動植物調節機制對照',
-          desc: '短時間神經快短準 vs 長時間內分泌慢長廣，植物生長素向光性應答。',
-          color: palette.emerald,
-          bg: palette.emeraldLight,
-          border: palette.emeraldBorder,
-        },
-      ].map((card) => (
-        <div
-          key={card.no}
-          style={{
-            padding: '24px 24px',
-            borderRadius: 16,
-            background: card.bg,
-            border: `1.5px solid ${card.border}`,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 10,
-          }}
-        >
-          <span style={{ fontSize: 20, fontWeight: 800, color: card.color }}>{card.no}</span>
-          <h3 style={{ fontSize: 24, fontWeight: 800, color: palette.text, margin: 0 }}>
-            {card.title}
-          </h3>
-          <p
+          marginBottom: 20,
+          letterSpacing: '0.04em',
+        }}
+      >
+        <span style={{ fontSize: 22 }}>●</span>
+        <span>國中自然科學 生物</span>
+      </div>
+
+      <h1
+        style={{
+          fontSize: 68,
+          fontWeight: 900,
+          color: palette.text,
+          margin: '0 0 16px 0',
+          lineHeight: 1.1,
+          letterSpacing: '-0.03em',
+        }}
+      >
+        人體的調節與內分泌系統
+      </h1>
+
+      <p
+        style={{
+          fontSize: 26,
+          color: palette.muted,
+          margin: '0 0 44px 0',
+          lineHeight: 1.5,
+          maxWidth: 1400,
+        }}
+      >
+        無管腺體血液循環運輸、微量高效靶器官專一反應、各大腺體生理功能與回饋調節全景突破
+      </p>
+
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 20,
+          maxWidth: 1720,
+        }}
+      >
+        {[
+          {
+            no: '01',
+            title: '內分泌腺本質特性',
+            desc: '無導管直接進入微血管，血液運送、微量高效，專一性作用於特定標的細胞。',
+            color: palette.amber,
+            bg: palette.amberLight,
+            border: palette.amberBorder,
+          },
+          {
+            no: '02',
+            title: '人體主要腺體總覽',
+            desc: '腦垂腺總指揮、甲狀腺代謝、副甲狀腺血鈣、腎上腺應急、胰島與性腺分工。',
+            color: palette.rose,
+            bg: palette.roseLight,
+            border: palette.roseBorder,
+          },
+          {
+            no: '03',
+            title: '血糖與恆定回饋',
+            desc: '胰臟內外分泌兼具，胰島素與升糖素拮抗調控，負回饋抑制維護體內平衡。',
+            color: palette.indigo,
+            bg: palette.indigoLight,
+            border: palette.indigoBorder,
+          },
+          {
+            no: '04',
+            title: '動植物調節機制對照',
+            desc: '短時間神經快短準 vs 長時間內分泌慢長廣，植物生長素向光性應答。',
+            color: palette.emerald,
+            bg: palette.emeraldLight,
+            border: palette.emeraldBorder,
+          },
+        ].map((card) => (
+          <div
+            key={card.no}
             style={{
-              fontSize: 20,
-              color: palette.muted,
-              margin: 0,
-              lineHeight: 1.45,
+              padding: '24px 24px',
+              borderRadius: 16,
+              background: card.bg,
+              border: `1.5px solid ${card.border}`,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 10,
             }}
           >
-            {card.desc}
-          </p>
-        </div>
-      ))}
+            <span style={{ fontSize: 20, fontWeight: 800, color: card.color }}>{card.no}</span>
+            <h3 style={{ fontSize: 24, fontWeight: 800, color: palette.text, margin: 0 }}>
+              {card.title}
+            </h3>
+            <p
+              style={{
+                fontSize: 20,
+                color: palette.muted,
+                margin: 0,
+                lineHeight: 1.45,
+              }}
+            >
+              {card.desc}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
+    <PageFooter />
   </div>
 );
 
 const SlideEndocrineConcept: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 2;
   return (
     <div style={fill}>
       <PageHeader
@@ -361,7 +375,8 @@ const SlideEndocrineConcept: Page = () => {
                 <strong>分泌途徑：</strong>分泌物經由導管排放至體表或消化道內腔。
               </li>
               <li>
-                <strong>典型實例：</strong>汗腺（排汗散熱）、唾液腺（分泌唾液澱粉酶）、淚腺（淚液）、皮脂腺、
+                <strong>典型實例：</strong>
+                汗腺（排汗散熱）、唾液腺（分泌唾液澱粉酶）、淚腺（淚液）、皮脂腺、
                 <strong>胰臟分泌胰液經胰管注入十二指腸</strong>。
               </li>
             </ul>
@@ -405,7 +420,8 @@ const SlideEndocrineConcept: Page = () => {
               }}
             >
               <li>
-                <strong>構造特徵：</strong><strong>沒有專屬導管</strong>（無管腺）。
+                <strong>構造特徵：</strong>
+                <strong>沒有專屬導管</strong>（無管腺）。
               </li>
               <li>
                 <strong>分泌途徑：</strong>細胞合成之<strong>激素（荷爾蒙 Hormone）</strong>
@@ -487,18 +503,18 @@ const SlideEndocrineConcept: Page = () => {
               lineHeight: 1.5,
             }}
           >
-            ★ 會考必考概念：胰臟是人體極少數<strong>兼具外分泌部（胰液）與內分泌部（胰島素、升糖素）</strong>
+            ★ 會考必考概念：胰臟是人體極少數
+            <strong>兼具外分泌部（胰液）與內分泌部（胰島素、升糖素）</strong>
             的複合器官！
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideEndocrineOverview: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 3;
   return (
     <div style={fill}>
       <PageHeader
@@ -633,13 +649,12 @@ const SlideEndocrineOverview: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlidePituitaryGland: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 4;
   return (
     <div style={fill}>
       <PageHeader
@@ -702,7 +717,8 @@ const SlidePituitaryGland: Page = () => {
                 生長發育、加速蛋白質合成。
               </li>
               <li>
-                <strong>多種促激素：</strong>分泌<strong>促甲狀腺素、促腎上腺皮質素、促性腺素</strong>
+                <strong>多種促激素：</strong>分泌
+                <strong>促甲狀腺素、促腎上腺皮質素、促性腺素</strong>
                 ，能刺激並調節甲狀腺、腎上腺與性腺的分泌活性，故稱「總指揮」。
               </li>
             </ul>
@@ -751,9 +767,11 @@ const SlidePituitaryGland: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.rose }}>
                   ① 巨人症 (Gigantism)
                 </div>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
-                  <strong>幼年發育期分泌過多</strong>，長骨骨骺尚未癒合，導致身材異常高大（可超過 200
-                  公分以上）。
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
+                  <strong>幼年發育期分泌過多</strong>，長骨骨骺尚未癒合，導致身材異常高大（可超過
+                  200 公分以上）。
                 </p>
               </div>
 
@@ -768,7 +786,9 @@ const SlidePituitaryGland: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.indigo }}>
                   ② 侏儒症 (Dwarfism)
                 </div>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
                   <strong>幼年發育期分泌不足</strong>，身材極度矮小，骨骼發育受阻，
                   <strong>但智力發育通常正常</strong>（此點與甲狀腺不足的呆小症截然不同！）。
                 </p>
@@ -785,7 +805,9 @@ const SlidePituitaryGland: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.amber }}>
                   ③ 肢端肥大症 (Acromegaly)
                 </div>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
                   <strong>成年後分泌過多</strong>，此時長骨已閉合無法再增高，轉而引發
                   <strong>下顎、鼻樑、手骨、腳骨異常粗大肥厚</strong>。
                 </p>
@@ -794,13 +816,12 @@ const SlidePituitaryGland: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideThyroidGland: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 5;
   return (
     <div style={fill}>
       <PageHeader
@@ -911,7 +932,9 @@ const SlideThyroidGland: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.rose }}>
                   ① 呆小症 (Cretinism)
                 </div>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
                   <strong>幼年期甲狀腺素分泌過少</strong>。特徵：
                   <strong>身材極矮小且智力發育嚴重遲緩</strong>（因腦部發育需要甲狀腺素）。
                 </p>
@@ -928,7 +951,9 @@ const SlideThyroidGland: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.amber }}>
                   ② 甲狀腺機能亢進 (Hyperthyroidism)
                 </div>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
                   <strong>分泌過多</strong>。特徵：細胞代謝過旺、體重消瘦、體溫偏高、心悸、手抖、
                   <strong>眼球突出</strong>、神經緊張失眠。
                 </p>
@@ -945,7 +970,9 @@ const SlideThyroidGland: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.cyan }}>
                   ③ 地方性甲狀腺腫（大脖子病）
                 </div>
-                <p style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
+                <p
+                  style={{ margin: '6px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.5 }}
+                >
                   飲食<strong>長期缺乏碘元素</strong>，無法合成甲狀腺素，促甲狀腺素過度刺激造成
                   <strong>甲狀腺代償性腫大</strong>。
                 </p>
@@ -954,13 +981,12 @@ const SlideThyroidGland: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideParathyroidGlands: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 6;
   return (
     <div style={fill}>
       <PageHeader
@@ -1019,14 +1045,21 @@ const SlideParathyroidGlands: Page = () => {
                 ，貼附在甲狀腺背面左右兩葉。
               </li>
               <li>
-                <strong>核心功能：</strong><strong>提高血液中的鈣離子 (Ca²⁺) 濃度</strong>。
+                <strong>核心功能：</strong>
+                <strong>提高血液中的鈣離子 (Ca²⁺) 濃度</strong>。
               </li>
               <li>
                 <strong>三大調控機制：</strong>
                 <ol style={{ margin: '6px 0 0', paddingLeft: 20 }}>
-                  <li>促進<strong>骨骼</strong>釋出鈣質進入血液（蝕骨作用）。</li>
-                  <li>促進<strong>腎臟</strong>減少尿鈣排出，增加鈣質再吸收。</li>
-                  <li>活化維生素 D，促進<strong>小腸</strong>吸收食物中的鈣。</li>
+                  <li>
+                    促進<strong>骨骼</strong>釋出鈣質進入血液（蝕骨作用）。
+                  </li>
+                  <li>
+                    促進<strong>腎臟</strong>減少尿鈣排出，增加鈣質再吸收。
+                  </li>
+                  <li>
+                    活化維生素 D，促進<strong>小腸</strong>吸收食物中的鈣。
+                  </li>
                 </ol>
               </li>
             </ul>
@@ -1076,7 +1109,9 @@ const SlideParathyroidGlands: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.rose }}>
                   ▲ 分泌過多（高血鈣）
                 </div>
-                <p style={{ margin: '8px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.55 }}>
+                <p
+                  style={{ margin: '8px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.55 }}
+                >
                   骨骼中的鈣質被大量抽取釋入血液，導致<strong>骨質疏鬆、骨骼脆弱易變形骨折</strong>
                   ；血液中高濃度的鈣質在腎臟沉積，容易引發<strong>腎結石</strong>。
                 </p>
@@ -1093,7 +1128,9 @@ const SlideParathyroidGlands: Page = () => {
                 <div style={{ fontSize: 22, fontWeight: 800, color: palette.amber }}>
                   ▼ 分泌不足（低血鈣）
                 </div>
-                <p style={{ margin: '8px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.55 }}>
+                <p
+                  style={{ margin: '8px 0 0', fontSize: 20, color: palette.text, lineHeight: 1.55 }}
+                >
                   血液中鈣濃度過低，會造成神經與肌肉過度異常興奮，引起
                   <strong>肌肉抽搐、手足痙攣、抽筋</strong>，嚴重時呼吸肌痙攣可能窒息致命。
                 </p>
@@ -1102,13 +1139,12 @@ const SlideParathyroidGlands: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlidePancreasAndIslets: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 7;
   return (
     <div style={fill}>
       <PageHeader
@@ -1267,13 +1303,12 @@ const SlidePancreasAndIslets: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideBloodGlucoseHomeostasis: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 8;
   return (
     <div style={fill}>
       <PageHeader
@@ -1398,13 +1433,12 @@ const SlideBloodGlucoseHomeostasis: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideAdrenalGlands: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 9;
   return (
     <div style={fill}>
       <PageHeader
@@ -1462,7 +1496,8 @@ const SlideAdrenalGlands: Page = () => {
                 <strong>解剖位置：</strong>位於左右兩側腎臟的頂端，狀似小帽子。
               </li>
               <li>
-                <strong>分泌時機：</strong>當個體面臨<strong>恐懼、驚嚇、憤怒、劇烈運動或緊急危難</strong>
+                <strong>分泌時機：</strong>當個體面臨
+                <strong>恐懼、驚嚇、憤怒、劇烈運動或緊急危難</strong>
                 時，神經系統直接刺激腎上腺迅速釋放。
               </li>
               <li>
@@ -1485,7 +1520,8 @@ const SlideAdrenalGlands: Page = () => {
             }}
           >
             <strong>🎯 演化意義：</strong>
-            迅速調動體內所有儲備能源與氧氣，為生死存亡的「戰鬥或逃跑 (Fight or Flight)」提供瞬間爆發力。
+            迅速調動體內所有儲備能源與氧氣，為生死存亡的「戰鬥或逃跑 (Fight or
+            Flight)」提供瞬間爆發力。
           </div>
         </div>
 
@@ -1557,13 +1593,12 @@ const SlideAdrenalGlands: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideGonadsAndReproduction: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 10;
   return (
     <div style={fill}>
       <PageHeader
@@ -1685,13 +1720,12 @@ const SlideGonadsAndReproduction: Page = () => {
           </ul>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideNegativeFeedback: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 11;
   return (
     <div style={fill}>
       <PageHeader
@@ -1825,13 +1859,12 @@ const SlideNegativeFeedback: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideAnimalPlantRegulation: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 12;
   return (
     <div style={fill}>
       <PageHeader
@@ -1974,13 +2007,12 @@ const SlideAnimalPlantRegulation: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideEndocrineMatrix: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 13;
   return (
     <div style={fill}>
       <PageHeader
@@ -2076,19 +2108,15 @@ const SlideEndocrineMatrix: Page = () => {
           ))}
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideExamPitfalls: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 14;
   return (
     <div style={fill}>
-      <PageHeader
-        title="會考陷阱與高頻考點精析"
-        subtitle="歷屆試題四大高頻失分地雷點與概念辨析"
-      />
+      <PageHeader title="會考陷阱與高頻考點精析" subtitle="歷屆試題四大高頻失分地雷點與概念辨析" />
       <div
         style={{
           display: 'grid',
@@ -2138,7 +2166,8 @@ const SlideExamPitfalls: Page = () => {
               lineHeight: 1.6,
             }}
           >
-            <strong>正確觀念：</strong><strong>侏儒症</strong>是幼年<strong>腦垂腺生長激素</strong>
+            <strong>正確觀念：</strong>
+            <strong>侏儒症</strong>是幼年<strong>腦垂腺生長激素</strong>
             不足，<strong>智力發育正常</strong>；而<strong>呆小症</strong>是幼年
             <strong>甲狀腺素</strong>分泌缺乏，<strong>智力與骨骼發育均嚴重落後遲緩</strong>！
           </p>
@@ -2280,13 +2309,12 @@ const SlideExamPitfalls: Page = () => {
           </p>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideSummary: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 15;
   return (
     <div style={fill}>
       <PageHeader
@@ -2328,7 +2356,9 @@ const SlideSummary: Page = () => {
               textAlign: 'center',
             }}
           >
-            腦垂總指揮 · 甲狀管代謝<br />副甲提血鈣 · 腎上備應急
+            腦垂總指揮 · 甲狀管代謝
+            <br />
+            副甲提血鈣 · 腎上備應急
           </div>
           <ul
             style={{
@@ -2372,7 +2402,9 @@ const SlideSummary: Page = () => {
               textAlign: 'center',
             }}
           >
-            飯後胰島素降糖存肝糖<br />飢餓升糖素腎上提血糖
+            飯後胰島素降糖存肝糖
+            <br />
+            飢餓升糖素腎上提血糖
           </div>
           <ul
             style={{
@@ -2416,7 +2448,9 @@ const SlideSummary: Page = () => {
               textAlign: 'center',
             }}
           >
-            侏儒智力好 · 呆小智力差<br />甲亢眼突瘦 · 副甲抽搐抽
+            侏儒智力好 · 呆小智力差
+            <br />
+            甲亢眼突瘦 · 副甲抽搐抽
           </div>
           <ul
             style={{
@@ -2460,7 +2494,9 @@ const SlideSummary: Page = () => {
               textAlign: 'center',
             }}
           >
-            微量高效血液運<br />專一靶受負回饋
+            微量高效血液運
+            <br />
+            專一靶受負回饋
           </div>
           <ul
             style={{
@@ -2478,7 +2514,7 @@ const SlideSummary: Page = () => {
           </ul>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };

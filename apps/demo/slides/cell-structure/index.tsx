@@ -157,7 +157,7 @@ const PageHeader = ({
   </div>
 );
 
-const PageFooter = ({ tip }: { tip?: string }) => {
+const PageFooter = ({ tip, note }: { tip?: string; note?: string }) => {
   const { current, total } = useSlidePageNumber();
   return (
     <div
@@ -174,18 +174,24 @@ const PageFooter = ({ tip }: { tip?: string }) => {
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <span
-          style={{
-            fontWeight: 700,
-            color: palette.emerald,
-            background: palette.emeraldLight,
-            padding: '3px 10px',
-            borderRadius: 6,
-          }}
-        >
-          核心考點牢記四大觀念：洋蔥表皮無葉綠體、植物也有粒線體、膜控進出壁支持、植物無器官系統！
-        </span>
-        <span>{tip || '配合國中生物課本單元 2-1 至 2-4 及實驗 2-1'}</span>
+        {note ? (
+          <span>{note}</span>
+        ) : (
+          <>
+            <span
+              style={{
+                fontWeight: 700,
+                color: palette.emerald,
+                background: palette.emeraldLight,
+                padding: '3px 10px',
+                borderRadius: 6,
+              }}
+            >
+              核心考點
+            </span>
+            <span>{tip || '配合國中生物課本單元 2-1 至 2-4 及實驗 2-1'}</span>
+          </>
+        )}
       </div>
       <div
         style={{
@@ -208,155 +214,168 @@ const Cover: Page = () => (
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
-      padding: '60px 100px',
+      padding: '48px 100px 24px 100px',
       background: 'radial-gradient(circle at 50% 30%, #ecfdf5 0%, #f8fafc 70%)',
     }}
   >
     <div
       style={{
-        display: 'inline-flex',
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
-        gap: 10,
-        padding: '6px 20px',
-        borderRadius: 999,
-        background: palette.emeraldLight,
-        border: `1px solid ${palette.emeraldBorder}`,
-        color: palette.emerald,
-        fontSize: 26,
-        fontWeight: 700,
-        letterSpacing: '0.06em',
-        marginBottom: 28,
       }}
     >
-      <span
+      <div
         style={{
-          width: 10,
-          height: 10,
-          borderRadius: '50%',
-          background: palette.emerald,
-        }}
-      />
-      國中自然科學 生物
-    </div>
-
-    <h1
-      style={{
-        fontFamily: 'var(--osd-font-display)',
-        fontSize: '96px',
-        fontWeight: 900,
-        color: palette.text,
-        margin: '0 0 20px 0',
-        lineHeight: 1.15,
-        letterSpacing: '-0.03em',
-      }}
-    >
-      <span style={{ fontSize: '96px' }}>生命的基本單位</span>
-      <br />
-      <span
-        style={{
-          background: 'linear-gradient(135deg, #059669 0%, #0284c7 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          fontSize: '96px',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 10,
+          padding: '6px 20px',
+          borderRadius: 999,
+          background: palette.emeraldLight,
+          border: `1px solid ${palette.emeraldBorder}`,
+          color: palette.emerald,
+          fontSize: 26,
+          fontWeight: 700,
+          letterSpacing: '0.06em',
+          marginBottom: 28,
         }}
       >
-        細胞構造與生理功能
-      </span>
-    </h1>
-
-    <p
-      style={{
-        fontSize: 30,
-        color: palette.muted,
-        maxWidth: 960,
-        margin: '0 0 44px 0',
-        lineHeight: 1.6,
-      }}
-    >
-      從虎克的顯微發現到細胞學說 · 胞器微觀功能 · 物質跨膜運輸機制 · 生物組成層次與玻片實作
-    </p>
-
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 260px)',
-        gap: 20,
-        marginBottom: 40,
-      }}
-    >
-      {[
-        {
-          tag: '01 歷史與學說',
-          desc: '虎克命名 · 許旺許萊登細胞學說',
-          color: palette.teal,
-          bg: palette.tealLight,
-        },
-        {
-          tag: '02 胞器解析',
-          desc: '動植物細胞構造 · 能量工廠',
-          color: palette.emerald,
-          bg: palette.emeraldLight,
-        },
-        {
-          tag: '03 物質進出',
-          desc: '擴散作用 · 滲透壓 · 膜蛋白通道',
-          color: palette.blue,
-          bg: palette.blueLight,
-        },
-        {
-          tag: '04 層次與實驗',
-          desc: '動植物層次 · 洋蔥與口腔皮膜',
-          color: palette.indigo,
-          bg: palette.indigoLight,
-        },
-      ].map((item) => (
-        <div
-          key={item.tag}
+        <span
           style={{
-            background: palette.surface,
-            borderRadius: 16,
-            padding: '18px 20px',
-            border: `1px solid ${palette.border}`,
-            boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
-            textAlign: 'left',
+            width: 10,
+            height: 10,
+            borderRadius: '50%',
+            background: palette.emerald,
+          }}
+        />
+        國中自然科學 生物
+      </div>
+
+      <h1
+        style={{
+          fontFamily: 'var(--osd-font-display)',
+          fontSize: '96px',
+          fontWeight: 900,
+          color: palette.text,
+          margin: '0 0 20px 0',
+          lineHeight: 1.15,
+          letterSpacing: '-0.03em',
+        }}
+      >
+        <span style={{ fontSize: '96px' }}>生命的基本單位</span>
+        <br />
+        <span
+          style={{
+            background: 'linear-gradient(135deg, #059669 0%, #0284c7 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            fontSize: '96px',
           }}
         >
+          細胞構造與生理功能
+        </span>
+      </h1>
+
+      <p
+        style={{
+          fontSize: 30,
+          color: palette.muted,
+          maxWidth: 960,
+          margin: '0 0 44px 0',
+          lineHeight: 1.6,
+        }}
+      >
+        從虎克的顯微發現到細胞學說 · 胞器微觀功能 · 物質跨膜運輸機制 · 生物組成層次與玻片實作
+      </p>
+
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 260px)',
+          gap: 20,
+          marginBottom: 40,
+        }}
+      >
+        {[
+          {
+            tag: '01 歷史與學說',
+            desc: '虎克命名 · 許旺許萊登細胞學說',
+            color: palette.teal,
+            bg: palette.tealLight,
+          },
+          {
+            tag: '02 胞器解析',
+            desc: '動植物細胞構造 · 能量工廠',
+            color: palette.emerald,
+            bg: palette.emeraldLight,
+          },
+          {
+            tag: '03 物質進出',
+            desc: '擴散作用 · 滲透壓 · 膜蛋白通道',
+            color: palette.blue,
+            bg: palette.blueLight,
+          },
+          {
+            tag: '04 層次與實驗',
+            desc: '動植物層次 · 洋蔥與口腔皮膜',
+            color: palette.indigo,
+            bg: palette.indigoLight,
+          },
+        ].map((item) => (
           <div
+            key={item.tag}
             style={{
-              display: 'inline-block',
-              background: item.bg,
-              color: item.color,
-              fontSize: 20,
-              fontWeight: 800,
-              padding: '3px 8px',
-              borderRadius: 6,
-              marginBottom: 8,
+              background: palette.surface,
+              borderRadius: 16,
+              padding: '18px 20px',
+              border: `1px solid ${palette.border}`,
+              boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+              textAlign: 'left',
             }}
           >
-            {item.tag}
+            <div
+              style={{
+                display: 'inline-block',
+                background: item.bg,
+                color: item.color,
+                fontSize: 20,
+                fontWeight: 800,
+                padding: '3px 8px',
+                borderRadius: 6,
+                marginBottom: 8,
+              }}
+            >
+              {item.tag}
+            </div>
+            <div
+              style={{ fontSize: '30px', color: palette.text, fontWeight: 600, lineHeight: 1.4 }}
+            >
+              {item.desc}
+            </div>
           </div>
-          <div style={{ fontSize: '30px', color: palette.text, fontWeight: 600, lineHeight: 1.4 }}>
-            {item.desc}
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
 
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 30,
-        fontSize: 24,
-        color: palette.muted,
-      }}
-    >
-      <span>📖 國中生物科教學簡報</span>
-      <span>•</span>
-      <span>🔬 完整圖文詳解與會考重點</span>
-      <span>•</span>
-      <span>按空白鍵或方向鍵 ➔ 進入學習</span>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 30,
+          fontSize: 24,
+          color: palette.muted,
+        }}
+      >
+        <span>📖 國中生物科教學簡報</span>
+        <span>•</span>
+        <span>🔬 完整圖文詳解與會考重點</span>
+        <span>•</span>
+        <span>按空白鍵或方向鍵 ➔ 進入學習</span>
+      </div>
     </div>
+    <PageFooter note="國中自然科學 · 生物（一上）單元 2 細胞的構造與功能" />
   </div>
 );
 

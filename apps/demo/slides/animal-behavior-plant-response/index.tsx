@@ -162,153 +162,167 @@ const PageHeader = ({
   </div>
 );
 
-const PageFooter = ({ current, total }: { current: number; total: number }) => (
-  <div
-    style={{
-      marginTop: 'auto',
-      paddingTop: 10,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      borderTop: `1px solid ${palette.border}`,
-      fontSize: 20,
-      color: palette.faint,
-      flexShrink: 0,
-    }}
-  >
-    <span>國中自然科學 · 生物（一上）單元 5-4 動物行為與植物感應</span>
-    <span>
-      {String(current).padStart(2, '0')}/{String(total).padStart(2, '0')}
-    </span>
-  </div>
-);
+const PageFooter = ({ tip }: { tip?: string }) => {
+  const { current, total } = useSlidePageNumber();
+  return (
+    <div
+      style={{
+        marginTop: 'auto',
+        paddingTop: 10,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        borderTop: `1px solid ${palette.border}`,
+        fontSize: 20,
+        color: palette.faint,
+        flexShrink: 0,
+      }}
+    >
+      <span>{tip || '國中自然科學 · 生物（一上）單元 5-4 動物行為與植物感應'}</span>
+      <span
+        style={{
+          fontVariantNumeric: 'tabular-nums',
+          fontWeight: 600,
+          background: palette.surfaceSubtle,
+          padding: '2px 10px',
+          borderRadius: 999,
+          color: palette.muted,
+        }}
+      >
+        {String(current).padStart(2, '0')} / {String(total).padStart(2, '0')}
+      </span>
+    </div>
+  );
+};
 
 const Cover: Page = () => (
   <div
     style={{
       ...fill,
       justifyContent: 'center',
-      padding: '72px 88px',
+      padding: '48px 88px 24px 88px',
       background: 'radial-gradient(circle at 10% 20%, #f0fdf4 0%, #ffffff 60%, #ecfdf5 100%)',
     }}
   >
-    <div
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: 10,
-        fontSize: 22,
-        fontWeight: 700,
-        color: palette.green,
-        marginBottom: 20,
-        letterSpacing: '0.04em',
-      }}
-    >
-      <span style={{ fontSize: 22 }}>●</span>
-      <span>國中自然科學 生物</span>
-    </div>
-
-    <h1
-      style={{
-        fontSize: 68,
-        fontWeight: 900,
-        color: palette.text,
-        margin: '0 0 16px 0',
-        lineHeight: 1.1,
-        letterSpacing: '-0.03em',
-      }}
-    >
-      動物行為與植物感應
-    </h1>
-
-    <p
-      style={{
-        fontSize: 26,
-        color: palette.muted,
-        margin: '0 0 44px 0',
-        lineHeight: 1.5,
-        maxWidth: 1400,
-      }}
-    >
-      先天本能與後天學習、植物向性生長素調控、膨壓運動與動植物感應全方位解析
-    </p>
-
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: 20,
-        maxWidth: 1720,
-      }}
-    >
-      {[
-        {
-          no: '01',
-          title: '動物行為雙軌分類',
-          desc: '遺傳決定的先天本能、反射與趨性，生活經驗累積的印痕、嘗試錯誤與推理。',
-          color: palette.indigo,
-          bg: palette.indigoLight,
-          border: palette.indigoBorder,
-        },
-        {
-          no: '02',
-          title: '植物向性生長運動',
-          desc: '生長素不均勻分佈驅動向光性、向地性、背地性與向觸性，不可逆生長伸長。',
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <div
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 10,
+          fontSize: 22,
+          fontWeight: 700,
           color: palette.green,
-          bg: palette.greenLight,
-          border: palette.greenBorder,
-        },
-        {
-          no: '03',
-          title: '植物膨壓快速運動',
-          desc: '水分得失引起細胞膨壓改變，含羞草觸發、葉片睡眠、捕蟲運動與氣孔開閉。',
-          color: palette.cyan,
-          bg: palette.cyanLight,
-          border: palette.cyanBorder,
-        },
-        {
-          no: '04',
-          title: '向性膨壓綜合對決',
-          desc: '生長不可逆 vs 膨壓可逆性本質鑑別，食蟲植物補氮考點與滿分速記心法。',
-          color: palette.amber,
-          bg: palette.amberLight,
-          border: palette.amberBorder,
-        },
-      ].map((card) => (
-        <div
-          key={card.no}
-          style={{
-            padding: '24px 24px',
-            borderRadius: 16,
-            background: card.bg,
-            border: `1.5px solid ${card.border}`,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 10,
-          }}
-        >
-          <span style={{ fontSize: 20, fontWeight: 800, color: card.color }}>{card.no}</span>
-          <h3 style={{ fontSize: 24, fontWeight: 800, color: palette.text, margin: 0 }}>
-            {card.title}
-          </h3>
-          <p
+          marginBottom: 20,
+          letterSpacing: '0.04em',
+        }}
+      >
+        <span style={{ fontSize: 22 }}>●</span>
+        <span>國中自然科學 生物</span>
+      </div>
+
+      <h1
+        style={{
+          fontSize: 68,
+          fontWeight: 900,
+          color: palette.text,
+          margin: '0 0 16px 0',
+          lineHeight: 1.1,
+          letterSpacing: '-0.03em',
+        }}
+      >
+        動物行為與植物感應
+      </h1>
+
+      <p
+        style={{
+          fontSize: 26,
+          color: palette.muted,
+          margin: '0 0 44px 0',
+          lineHeight: 1.5,
+          maxWidth: 1400,
+        }}
+      >
+        先天本能與後天學習、植物向性生長素調控、膨壓運動與動植物感應全方位解析
+      </p>
+
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 20,
+          maxWidth: 1720,
+        }}
+      >
+        {[
+          {
+            no: '01',
+            title: '動物行為雙軌分類',
+            desc: '遺傳決定的先天本能、反射與趨性，生活經驗累積的印痕、嘗試錯誤與推理。',
+            color: palette.indigo,
+            bg: palette.indigoLight,
+            border: palette.indigoBorder,
+          },
+          {
+            no: '02',
+            title: '植物向性生長運動',
+            desc: '生長素不均勻分佈驅動向光性、向地性、背地性與向觸性，不可逆生長伸長。',
+            color: palette.green,
+            bg: palette.greenLight,
+            border: palette.greenBorder,
+          },
+          {
+            no: '03',
+            title: '植物膨壓快速運動',
+            desc: '水分得失引起細胞膨壓改變，含羞草觸發、葉片睡眠、捕蟲運動與氣孔開閉。',
+            color: palette.cyan,
+            bg: palette.cyanLight,
+            border: palette.cyanBorder,
+          },
+          {
+            no: '04',
+            title: '向性膨壓綜合對決',
+            desc: '生長不可逆 vs 膨壓可逆性本質鑑別，食蟲植物補氮考點與滿分速記心法。',
+            color: palette.amber,
+            bg: palette.amberLight,
+            border: palette.amberBorder,
+          },
+        ].map((card) => (
+          <div
+            key={card.no}
             style={{
-              fontSize: 20,
-              color: palette.muted,
-              margin: 0,
-              lineHeight: 1.45,
+              padding: '24px 24px',
+              borderRadius: 16,
+              background: card.bg,
+              border: `1.5px solid ${card.border}`,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 10,
             }}
           >
-            {card.desc}
-          </p>
-        </div>
-      ))}
+            <span style={{ fontSize: 20, fontWeight: 800, color: card.color }}>{card.no}</span>
+            <h3 style={{ fontSize: 24, fontWeight: 800, color: palette.text, margin: 0 }}>
+              {card.title}
+            </h3>
+            <p
+              style={{
+                fontSize: 20,
+                color: palette.muted,
+                margin: 0,
+                lineHeight: 1.45,
+              }}
+            >
+              {card.desc}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
+    <PageFooter />
   </div>
 );
 
 const SlideAnimalBehaviorOverview: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 2;
   return (
     <div style={fill}>
       <PageHeader
@@ -466,13 +480,12 @@ const SlideAnimalBehaviorOverview: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideAnimalImprintingAndLearning: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 3;
   return (
     <div style={fill}>
       <PageHeader
@@ -587,13 +600,12 @@ const SlideAnimalImprintingAndLearning: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideAnimalCommunication: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 4;
   return (
     <div style={fill}>
       <PageHeader
@@ -806,13 +818,12 @@ const SlideAnimalCommunication: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlidePlantTropismOverview: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 5;
   return (
     <div style={fill}>
       <PageHeader
@@ -968,13 +979,12 @@ const SlidePlantTropismOverview: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlidePlantPhototropism: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 6;
   return (
     <div style={fill}>
       <PageHeader
@@ -1095,13 +1105,12 @@ const SlidePlantPhototropism: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideGeotropismRootStem: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 7;
   return (
     <div style={fill}>
       <PageHeader
@@ -1224,13 +1233,12 @@ const SlideGeotropismRootStem: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideThigmotropismAndHydrotropism: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 8;
   return (
     <div style={fill}>
       <PageHeader
@@ -1359,13 +1367,12 @@ const SlideThigmotropismAndHydrotropism: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideMimosaTurgorMovement: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 9;
   return (
     <div style={fill}>
       <PageHeader
@@ -1487,13 +1494,12 @@ const SlideMimosaTurgorMovement: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlidePlantSleepMovement: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 10;
   return (
     <div style={fill}>
       <PageHeader
@@ -1611,13 +1617,12 @@ const SlidePlantSleepMovement: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideCarnivorousPlantMovement: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 11;
   return (
     <div style={fill}>
       <PageHeader
@@ -1731,13 +1736,12 @@ const SlideCarnivorousPlantMovement: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideStomaTurgorMovement: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 12;
   return (
     <div style={fill}>
       <PageHeader
@@ -1880,13 +1884,12 @@ const SlideStomaTurgorMovement: Page = () => {
           </div>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideTropismVsTurgorMatrix: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 13;
   return (
     <div style={fill}>
       <PageHeader
@@ -1974,13 +1977,12 @@ const SlideTropismVsTurgorMatrix: Page = () => {
           ))}
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideExamPitfalls: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 14;
   return (
     <div style={fill}>
       <PageHeader
@@ -2177,13 +2179,12 @@ const SlideExamPitfalls: Page = () => {
           </p>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
 
 const SlideSummary: Page = () => {
-  const pageNo = useSlidePageNumber() ?? 15;
   return (
     <div style={fill}>
       <PageHeader
@@ -2383,7 +2384,7 @@ const SlideSummary: Page = () => {
           </ul>
         </div>
       </div>
-      <PageFooter current={pageNo} total={15} />
+      <PageFooter />
     </div>
   );
 };
