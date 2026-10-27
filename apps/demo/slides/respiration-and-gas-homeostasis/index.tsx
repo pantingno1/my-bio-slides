@@ -367,17 +367,35 @@ const SlideRespirationVsBreathing: Page = () => (
         <div
           style={{
             background: palette.cyanLight,
-            padding: '16px 20px',
+            padding: '18px 24px',
             borderRadius: 14,
-            fontSize: 22,
-            fontWeight: 700,
-            color: palette.text,
-            lineHeight: 1.6,
+            border: `1.5px solid ${palette.cyanBorder}`,
           }}
         >
-          <strong>化學反應方程式：</strong>
-          <br />
-          葡萄糖 ($C_6H_{12}O_6$) + 氧氣 ($O_2$) $\to$ 二氧化碳 ($CO_2$) + 水 ($H_2O$) + 能量 (ATP)
+          <div style={{ fontSize: 20, fontWeight: 800, color: palette.cyan, marginBottom: 8 }}>
+            呼吸作用化學反應總式 (Overall Equation)：
+          </div>
+          <div
+            style={{
+              fontSize: 24,
+              fontWeight: 900,
+              color: palette.text,
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: 8,
+            }}
+          >
+            <span style={{ color: palette.amber }}>葡萄糖 (C₆H₁₂O₆)</span>
+            <span>+</span>
+            <span style={{ color: palette.blue }}>氧氣 (O₂)</span>
+            <span style={{ color: palette.cyan, fontWeight: 800 }}>──[ 粒線體 · 酵素 ]──➔</span>
+            <span style={{ color: palette.rose }}>二氧化碳 (CO₂)</span>
+            <span>+</span>
+            <span style={{ color: palette.blue }}>水 (H₂O)</span>
+            <span>+</span>
+            <span style={{ color: palette.emerald }}>能量 (ATP)</span>
+          </div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -439,7 +457,7 @@ const SlideRespirationVsBreathing: Page = () => (
         >
           <strong>物理運動機制：</strong>
           <br />
-          肋骨與橫膈肌肉協同運動 $\to$ 胸腔容積改變 $\to$ 產生壓力差驅動氣體進出肺臟
+          肋骨與橫膈肌肉協同運動 $➔$ 胸腔容積改變 $➔$ 產生壓力差驅動氣體進出肺臟
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -447,12 +465,11 @@ const SlideRespirationVsBreathing: Page = () => (
             <strong>器官構造：</strong>呼吸道（鼻、咽、喉、氣管、支氣管）與<strong>肺臟</strong>。
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.55 }}>
-            <strong>核心目的：</strong>提供呼吸作用所需的 $O_2$，並排出其代謝副產物 $CO_2$。
+            <strong>核心目的：</strong>提供呼吸作用所需的 O₂，並排出其代謝副產物 CO₂。
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.55 }}>
             <strong>呼吸三部曲：</strong>
-            外呼吸（肺泡氣體交換） $\to$ 氣體運輸（血液循環攜帶） $\to$
-            內呼吸（微血管與組織細胞擴散）。
+            外呼吸（肺泡氣體交換） $➔$ 氣體運輸（血液循環攜帶） $➔$ 內呼吸（微血管與組織細胞擴散）。
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.55 }}>
             <strong>本質屬性：</strong>胸腔肌肉收縮與舒張帶動的<strong>物理機械運動</strong>。
@@ -645,7 +662,7 @@ const SlideAlveoliGasExchange: Page = () => (
             },
             {
               title: '極薄細胞壁',
-              desc: '肺泡壁與微血管壁均僅由「單層扁平上皮細胞」構成，氣體擴散距離小於 1 微米（$mu m$）。',
+              desc: '肺泡壁與微血管壁均僅由「單層扁平上皮細胞」構成，氣體擴散距離小於 1 微米（μm）。',
               color: palette.blue,
               bg: palette.blueLight,
             },
@@ -732,11 +749,11 @@ const SlideAlveoliGasExchange: Page = () => (
               marginBottom: 8,
             }}
           >
-            💨 氧氣 ($O_2$) 擴散途徑
+            💨 氧氣 (O₂) 擴散途徑
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.6 }}>
-            肺泡中 $O_2$ 濃度高 $\to$ 擴散進入肺微血管（低濃度） $\to$ 與紅血球內的
-            <strong>血紅素</strong>結合 $\to$ 缺氧血轉變為<strong>充氧血</strong> $\to$
+            肺泡中 O₂ 濃度高 $➔$ 擴散進入肺微血管（低濃度） $➔$ 與紅血球內的
+            <strong>血紅素</strong>結合 $➔$ 缺氧血轉變為<strong>充氧血</strong> $➔$
             經肺靜脈回流左心房。
           </div>
         </div>
@@ -757,11 +774,10 @@ const SlideAlveoliGasExchange: Page = () => (
               marginBottom: 8,
             }}
           >
-            💨 二氧化碳 ($CO_2$) 擴散途徑
+            💨 二氧化碳 (CO₂) 擴散途徑
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.6 }}>
-            全身帶回肺部的血液 $CO_2$ 濃度高 $\to$ 自血漿擴散進入肺泡（低濃度） $\to$
-            隨呼氣動作排出體外。
+            全身帶回肺部的血液 CO₂ 濃度高 $➔$ 自血漿擴散進入肺泡（低濃度） $➔$ 隨呼氣動作排出體外。
           </div>
         </div>
 
@@ -775,8 +791,8 @@ const SlideAlveoliGasExchange: Page = () => (
             lineHeight: 1.5,
           }}
         >
-          ⚡ <strong>內外呼吸對比：</strong>肺泡與微血管交換為「外呼吸」；組織微血管將 $O_2$
-          釋給組織細胞並接收其代謝 $CO_2$ 為「內呼吸」。
+          ⚡ <strong>內外呼吸對比：</strong>肺泡與微血管交換為「外呼吸」；組織微血管將 O₂
+          釋給組織細胞並接收其代謝 CO₂ 為「內呼吸」。
         </div>
       </div>
     </div>
@@ -1130,8 +1146,8 @@ const SlideBottleLungModel: Page = () => (
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.6 }}>
             <strong>模擬狀態：</strong>模擬人體<strong>橫膈收縮下降（吸氣）</strong>。
             <br />
-            <strong>物理連鎖：</strong>寶特瓶內部容積變大 $\to$ 瓶內氣壓小於大氣壓 $\to$ 外界空氣經
-            Y 型管被大氣壓壓入內部小氣球 $\to$ <strong>小氣球充氣膨脹脹大</strong>。
+            <strong>物理連鎖：</strong>寶特瓶內部容積變大 $➔$ 瓶內氣壓小於大氣壓 $➔$ 外界空氣經 Y
+            型管被大氣壓壓入內部小氣球 $➔$ <strong>小氣球充氣膨脹脹大</strong>。
           </div>
         </div>
 
@@ -1149,8 +1165,8 @@ const SlideBottleLungModel: Page = () => (
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.6 }}>
             <strong>模擬狀態：</strong>模擬人體<strong>橫膈舒張上升（呼氣）</strong>。
             <br />
-            <strong>物理連鎖：</strong>寶特瓶內部容積縮小 $\to$ 瓶內氣壓大於大氣壓 $\to$
-            內部高壓擠壓小氣球 $\to$ 氣球內氣體被擠出 Y 型管 $\to$ <strong>小氣球變扁縮小</strong>。
+            <strong>物理連鎖：</strong>寶特瓶內部容積縮小 $➔$ 瓶內氣壓大於大氣壓 $➔$
+            內部高壓擠壓小氣球 $➔$ 氣球內氣體被擠出 Y 型管 $➔$ <strong>小氣球變扁縮小</strong>。
           </div>
         </div>
 
@@ -1229,7 +1245,7 @@ const SlideBreathingRegulation: Page = () => (
           <div style={{ background: palette.cyanLight, padding: '14px 18px', borderRadius: 12 }}>
             <strong>腦幹的主導角色：</strong>
             呼吸中樞位於腦幹（延腦與橋腦），負責不自主的自律節律控制。人無法僅靠意志力長時間閉氣自殺，當血液中
-            $CO_2$ 累積到閾值，腦幹會強行啟動呼吸動作。
+            CO₂ 累積到閾值，腦幹會強行啟動呼吸動作。
           </div>
           <div>
             <strong>大腦意識的有限調控：</strong>
@@ -1237,8 +1253,8 @@ const SlideBreathingRegulation: Page = () => (
           </div>
           <div>
             <strong>血液刺激訊號的主角：</strong>
-            刺激腦幹呼吸中樞的最主要物質是<strong>血液中的二氧化碳 ($CO_2$) 濃度</strong>
-            （及其引發的氫離子濃度/酸鹼度下降），<strong>並不是氧氣 ($O_2$) 缺乏</strong>！
+            刺激腦幹呼吸中樞的最主要物質是<strong>血液中的二氧化碳 (CO₂) 濃度</strong>
+            （及其引發的氫離子濃度/酸鹼度下降），<strong>並不是氧氣 (O₂) 缺乏</strong>！
           </div>
         </div>
       </div>
@@ -1276,17 +1292,17 @@ const SlideBreathingRegulation: Page = () => (
           {[
             {
               step: '① 肌肉劇烈運動',
-              desc: '肌肉細胞劇烈進行呼吸作用消耗大量葡萄糖與氧氣，產生大量副產物二氧化碳 ($CO_2$)。',
+              desc: '肌肉細胞劇烈進行呼吸作用消耗大量葡萄糖與氧氣，產生大量副產物二氧化碳 (CO₂)。',
               color: palette.cyan,
             },
             {
               step: '② 血液 CO₂ 濃度升高',
-              desc: '過量 $CO_2$ 溶於血漿生成碳酸，血液呈微酸性，化學感受器精準捕捉訊號。',
+              desc: '過量 CO₂ 溶於血漿生成碳酸，血液呈微酸性，化學感受器精準捕捉訊號。',
               color: palette.blue,
             },
             {
               step: '③ 刺激腦幹呼吸中樞',
-              desc: '腦幹接收高濃度 $CO_2$ 刺激，神經衝動發放頻率顯著加快加強。',
+              desc: '腦幹接收高濃度 CO₂ 刺激，神經衝動發放頻率顯著加快加強。',
               color: palette.indigo,
             },
             {
@@ -1296,7 +1312,7 @@ const SlideBreathingRegulation: Page = () => (
             },
             {
               step: '⑤ 恢復體內氣體恆定',
-              desc: '肺臟迅速排出過量 $CO_2$ 並補足 $O_2$，血液氣體濃度重回平衡設定點。',
+              desc: '肺臟迅速排出過量 CO₂ 並補足 O₂，血液氣體濃度重回平衡設定點。',
               color: palette.emerald,
             },
           ].map((item) => (
@@ -1396,7 +1412,7 @@ const SlideLabExhaledGas: Page = () => (
             }}
           >
             <h4 style={{ fontSize: 24, fontWeight: 800, margin: 0, color: palette.cyan }}>
-              實驗一：澄清石灰水檢測二氧化碳 ($CO_2$)
+              實驗一：澄清石灰水檢測二氧化碳 (CO₂)
             </h4>
             <span
               style={{
@@ -1412,14 +1428,27 @@ const SlideLabExhaledGas: Page = () => (
             </span>
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.55 }}>
-            <strong>實驗步驟：</strong>用吸管將呼出的氣體徐徐吹入裝有<strong>澄清石灰水</strong>{' '}
-            $[Ca(OH)_2]$ 的試管中。
+            <strong>實驗步驟：</strong>用吸管將呼出的氣體徐徐吹入裝有
+            <strong>澄清石灰水 [Ca(OH)₂]</strong> 的試管中。
             <br />
             <strong>觀察現象：</strong>石灰水由原本的透明澄清轉變為<strong>白色混濁</strong>
-            （生成不溶於水的碳酸鈣 $CaCO_3$ 白色沉澱）。
+            （生成不溶於水的碳酸鈣 CaCO₃ 白色沉澱）。
             <br />
-            <strong>吸入 vs 呼出對比：</strong>吸入的大氣中 $CO_2$ 僅
-            0.04%，無法使石灰水變混濁；呼出氣體 $CO_2$ 高達 4%，能立即變混濁。
+            <strong>吸入 vs 呼出對比：</strong>吸入大氣中 CO₂ 僅 0.04%，無法使石灰水變混濁；呼出氣體
+            CO₂ 高達 4%，能迅速產生白色沉澱。
+            <div
+              style={{
+                background: palette.cyanLight,
+                padding: '10px 14px',
+                borderRadius: 10,
+                marginTop: 8,
+                fontSize: 20,
+                fontWeight: 800,
+                color: palette.cyan,
+              }}
+            >
+              反應方程式：Ca(OH)₂ (澄清石灰水) + CO₂ ➔ CaCO₃↓ (白色沉澱) + H₂O
+            </div>
           </div>
         </div>
 
@@ -1441,7 +1470,7 @@ const SlideLabExhaledGas: Page = () => (
             }}
           >
             <h4 style={{ fontSize: 24, fontWeight: 800, margin: 0, color: palette.rose }}>
-              實驗二：氯化亞鈷試紙檢測水氣 ($H_2O$)
+              實驗二：氯化亞鈷試紙檢測水氣 (H₂O)
             </h4>
             <span
               style={{
@@ -1477,8 +1506,11 @@ const SlideLabExhaledGas: Page = () => (
           }}
         >
           💡 <strong>持續吹氣的過度反應（延伸思考）：</strong>
-          若對已混濁的石灰水長時間持續吹氣，碳酸鈣會轉變為可溶的碳酸氫鈣 $[Ca(HCO_3)_2]$，液體會
+          若對已混濁的石灰水長時間持續吹氣，碳酸鈣會轉變為可溶於水的碳酸氫鈣 [Ca(HCO₃)₂]，液體會
           <strong>重新由混濁變回澄清</strong>！
+          <div style={{ fontSize: 20, fontWeight: 800, color: palette.amber, marginTop: 4 }}>
+            過量溶解反應式：CaCO₃ + H₂O + CO₂ ➔ Ca(HCO₃)₂ (可溶透明)
+          </div>
         </div>
       </div>
     </div>
@@ -1595,7 +1627,7 @@ const SlideLabPlantRespiration: Page = () => (
         >
           🔒 <strong>會考關鍵注意（實驗操作設計考點）：</strong>
           綠豆<strong>不可長出綠葉，或全程置於暗室進行</strong>！因為一旦長出綠葉並照光，綠葉會進行
-          <strong>光合作用吸收二氧化碳</strong>，將掩蓋並干擾呼吸作用釋出 $CO_2$ 的測定結果！
+          <strong>光合作用吸收二氧化碳</strong>，將掩蓋並干擾呼吸作用釋出 CO₂ 的測定結果！
         </div>
       </div>
     </div>
@@ -1660,8 +1692,8 @@ const SlidePlantGasExchange: Page = () => (
               🌿 葉片與草本莖：氣孔 (Stomata)
             </div>
             <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
-              由成對的保衛細胞調控開閉。白天受光照保衛細胞吸水膨脹氣孔開，利於光合作用吸收 $CO_2$
-              與釋放 $O_2$；同時調節蒸散作用。
+              由成對的保衛細胞調控開閉。白天受光照保衛細胞吸水膨脹氣孔開，利於光合作用吸收 CO₂
+              與釋放 O₂；同時調節蒸散作用。
             </div>
           </div>
 
@@ -1744,8 +1776,8 @@ const SlidePlantGasExchange: Page = () => (
             <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
               <strong>光合作用速率 ＞ 呼吸作用速率</strong>
               <br />
-              植物呼吸作用釋出的 $CO_2$ 全部被光合作用利用仍不足，必須自外界
-              <strong>淨吸收 $CO_2$</strong>；同時<strong>淨釋放 $O_2$</strong> 補充大氣。
+              植物呼吸作用釋出的 CO₂ 全部被光合作用利用仍不足，必須自外界
+              <strong>淨吸收 CO₂</strong>；同時<strong>淨釋放 O₂</strong> 補充大氣。
             </div>
           </div>
 
@@ -1763,8 +1795,8 @@ const SlidePlantGasExchange: Page = () => (
             <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
               <strong>光合作用停止，僅進行呼吸作用</strong>
               <br />
-              植物細胞持續消耗氧氣釋放二氧化碳，因此外界測得表現為<strong>淨吸收 $O_2$</strong>、
-              <strong>淨釋放 $CO_2$</strong>。
+              植物細胞持續消耗氧氣釋放二氧化碳，因此外界測得表現為<strong>淨吸收 O₂</strong>、
+              <strong>淨釋放 CO₂</strong>。
             </div>
           </div>
 
@@ -1967,7 +1999,7 @@ const SlideOrganSystemsCoordination: Page = () => (
             🫁 呼吸系統 (Respiratory System)
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
-            自外界攝取氧氣 ($O_2$) 擴散入血，並將細胞代謝產生的二氧化碳 ($CO_2$)
+            自外界攝取氧氣 (O₂) 擴散入血，並將細胞代謝產生的二氧化碳 (CO₂)
             排出體外，是體內氣體恆定的第一線閘口。
           </div>
         </div>
@@ -2002,8 +2034,8 @@ const SlideOrganSystemsCoordination: Page = () => (
             ❤️ 循環系統 (Circulatory System)
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.5 }}>
-            以心臟為動力、血液為介質，充當全身體內的高速運輸物流網，將氧氣與養分送達組織，並將
-            $CO_2$ 與廢物載運至排泄器官。
+            以心臟為動力、血液為介質，充當全身體內的高速運輸物流網，將氧氣與養分送達組織，並將 CO₂
+            與廢物載運至排泄器官。
           </div>
         </div>
 
