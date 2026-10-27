@@ -457,7 +457,7 @@ const SlideRespirationVsBreathing: Page = () => (
         >
           <strong>物理運動機制：</strong>
           <br />
-          肋骨與橫膈肌肉協同運動 $➔$ 胸腔容積改變 $➔$ 產生壓力差驅動氣體進出肺臟
+          肋骨與橫膈肌肉協同運動 ➔ 胸腔容積改變 ➔ 產生壓力差驅動氣體進出肺臟
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -469,7 +469,7 @@ const SlideRespirationVsBreathing: Page = () => (
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.55 }}>
             <strong>呼吸三部曲：</strong>
-            外呼吸（肺泡氣體交換） $➔$ 氣體運輸（血液循環攜帶） $➔$ 內呼吸（微血管與組織細胞擴散）。
+            外呼吸（肺泡氣體交換） ➔ 氣體運輸（血液循環攜帶） ➔ 內呼吸（微血管與組織細胞擴散）。
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.55 }}>
             <strong>本質屬性：</strong>胸腔肌肉收縮與舒張帶動的<strong>物理機械運動</strong>。
@@ -752,9 +752,8 @@ const SlideAlveoliGasExchange: Page = () => (
             💨 氧氣 (O₂) 擴散途徑
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.6 }}>
-            肺泡中 O₂ 濃度高 $➔$ 擴散進入肺微血管（低濃度） $➔$ 與紅血球內的
-            <strong>血紅素</strong>結合 $➔$ 缺氧血轉變為<strong>充氧血</strong> $➔$
-            經肺靜脈回流左心房。
+            肺泡中 O₂ 濃度高 ➔ 擴散進入肺微血管（低濃度） ➔ 與紅血球內的
+            <strong>血紅素</strong>結合 ➔ 缺氧血轉變為<strong>充氧血</strong> ➔ 經肺靜脈回流左心房。
           </div>
         </div>
 
@@ -777,7 +776,7 @@ const SlideAlveoliGasExchange: Page = () => (
             💨 二氧化碳 (CO₂) 擴散途徑
           </div>
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.6 }}>
-            全身帶回肺部的血液 CO₂ 濃度高 $➔$ 自血漿擴散進入肺泡（低濃度） $➔$ 隨呼氣動作排出體外。
+            全身帶回肺部的血液 CO₂ 濃度高 ➔ 自血漿擴散進入肺泡（低濃度） ➔ 隨呼氣動作排出體外。
           </div>
         </div>
 
@@ -1146,8 +1145,8 @@ const SlideBottleLungModel: Page = () => (
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.6 }}>
             <strong>模擬狀態：</strong>模擬人體<strong>橫膈收縮下降（吸氣）</strong>。
             <br />
-            <strong>物理連鎖：</strong>寶特瓶內部容積變大 $➔$ 瓶內氣壓小於大氣壓 $➔$ 外界空氣經 Y
-            型管被大氣壓壓入內部小氣球 $➔$ <strong>小氣球充氣膨脹脹大</strong>。
+            <strong>物理連鎖：</strong>寶特瓶內部容積變大 ➔ 瓶內氣壓小於大氣壓 ➔ 外界空氣經 Y
+            型管被大氣壓壓入內部小氣球 ➔ <strong>小氣球充氣膨脹脹大</strong>。
           </div>
         </div>
 
@@ -1165,8 +1164,8 @@ const SlideBottleLungModel: Page = () => (
           <div style={{ fontSize: 20, color: palette.text, lineHeight: 1.6 }}>
             <strong>模擬狀態：</strong>模擬人體<strong>橫膈舒張上升（呼氣）</strong>。
             <br />
-            <strong>物理連鎖：</strong>寶特瓶內部容積縮小 $➔$ 瓶內氣壓大於大氣壓 $➔$
-            內部高壓擠壓小氣球 $➔$ 氣球內氣體被擠出 Y 型管 $➔$ <strong>小氣球變扁縮小</strong>。
+            <strong>物理連鎖：</strong>寶特瓶內部容積縮小 ➔ 瓶內氣壓大於大氣壓 ➔ 內部高壓擠壓小氣球
+            ➔ 氣球內氣體被擠出 Y 型管 ➔ <strong>小氣球變扁縮小</strong>。
           </div>
         </div>
 
