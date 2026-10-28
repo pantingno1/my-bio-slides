@@ -23,7 +23,6 @@ import question113UrinaryImg from './assets/question_113_urinary.png';
 import questionUrinarySystemImg from './assets/question_urinary_system.png';
 import reptileSnakeScalesImg from './assets/reptile_snake_scales.jpg';
 import reptileTurtlePlatesImg from './assets/reptile_turtle_plates.png';
-import ureterBladderKidneyImg from './assets/ureter_bladder_kidney.png';
 import uricAcidCrystalImg from './assets/uric_acid_crystal.png';
 
 export const meta: SlideMeta = {
@@ -1710,8 +1709,8 @@ const SlideKidneyBloodFiltration: Page = () => (
             }}
           >
             <ZoomableImage
-              src={ureterBladderKidneyImg}
-              alt="腎動脈、腎靜脈與輸尿管尿液形成流程圖"
+              src={urinarySystemOverview63Img}
+              alt="人體泌尿系統解剖圖與血液循環連接圖"
               style={{
                 maxWidth: '100%',
                 maxHeight: '100%',
