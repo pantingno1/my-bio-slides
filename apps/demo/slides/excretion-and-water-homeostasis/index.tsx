@@ -3048,7 +3048,7 @@ const SlideMindMapSummary: Page = () => (
   </div>
 );
 
-export const pages: Page[] = [
+export default [
   Cover,
   SlideExcretionDefinition,
   SlideNitrogenousWastes,
